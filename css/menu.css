@@ -1,0 +1,205 @@
+/* ===== MENU PAGE ===== */
+
+/* Sticky category tabs */
+.menu-tabs {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 50;
+  background-color: var(--clr-cream);
+  border-bottom: 1px solid var(--clr-sand);
+  padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tabs__inner {
+  display: flex;
+  gap: 0;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.menu-tab {
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  font-size: var(--fs-small);
+  color: var(--clr-espresso);
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  border: none;
+  background: none;
+}
+
+.menu-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 3px;
+  background-color: var(--clr-amber);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.menu-tab:hover {
+  color: var(--clr-amber);
+}
+
+.menu-tab.active {
+  color: var(--clr-amber);
+}
+
+.menu-tab.active::after {
+  transform: scaleX(1);
+}
+
+/* Menu sections */
+.menu-section {
+  padding: var(--space-xl) 0;
+}
+
+.menu-section:nth-child(odd) {
+  background-color: var(--clr-cream);
+}
+
+.menu-section:nth-child(even) {
+  background-color: var(--clr-white);
+}
+
+.menu-section--dark {
+  background-color: var(--clr-dark) !important;
+  color: var(--clr-parchment);
+}
+
+.menu-section--dark .menu-item__name {
+  color: var(--clr-parchment);
+}
+
+.menu-section--dark .menu-item__desc {
+  color: var(--clr-sand);
+}
+
+.menu-section--dark .menu-item__price {
+  color: var(--clr-amber);
+}
+
+.menu-section__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.menu-section__header h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.menu-section__header p {
+  color: var(--clr-sand);
+  font-style: italic;
+  margin: 0 auto;
+}
+
+.menu-section__divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--clr-amber);
+  margin: var(--space-sm) auto;
+}
+
+/* Menu items grid */
+.menu-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(196, 184, 165, 0.3);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item__info {
+  flex: 1;
+  padding-right: var(--space-sm);
+}
+
+.menu-item__name {
+  font-weight: 600;
+  font-size: var(--fs-body);
+  color: var(--clr-espresso);
+}
+
+.menu-item__desc {
+  font-size: var(--fs-small);
+  color: var(--clr-sand);
+  margin-top: 0.15rem;
+}
+
+.menu-item__price {
+  font-weight: 600;
+  font-size: var(--fs-body);
+  color: var(--clr-sienna);
+  white-space: nowrap;
+}
+
+/* Cocktail cards (special layout) */
+.menu-items--cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  max-width: 900px;
+}
+
+.cocktail-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(196, 184, 165, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cocktail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.cocktail-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.cocktail-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+}
+
+.cocktail-card__desc {
+  font-size: var(--fs-small);
+  color: var(--clr-sand);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .menu-items--cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

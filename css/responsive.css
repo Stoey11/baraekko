@@ -1,0 +1,28 @@
+/* Mobile-first responsive overrides */
+
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .page-header {
+    height: 30vh;
+    min-height: 250px;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --nav-height: 90px;
+  }
+}
