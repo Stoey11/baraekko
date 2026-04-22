@@ -6,8 +6,22 @@
   }
 
   .page-header {
-    height: 30vh;
-    min-height: 250px;
+    min-height: auto;
+    height: auto;
+    padding: calc(var(--nav-height) + var(--space-md)) var(--space-md) var(--space-md);
+  }
+
+  .page-header__title {
+    font-size: clamp(1.75rem, 8.5vw, 2.5rem);
+    letter-spacing: -0.02em;
+  }
+
+  .map-section__inner {
+    height: clamp(260px, 40vh, 380px);
+  }
+
+  .map-section__frame {
+    filter: grayscale(0.05);
   }
 
   .hide-mobile {

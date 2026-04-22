@@ -140,22 +140,25 @@
 
 .nav__hamburger span {
   display: block;
-  width: 22px;
-  height: 1.5px;
+  width: 24px;
+  height: 2px;
   background-color: var(--clr-ink);
+  border-radius: 2px;
   transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
 }
 
 .nav__hamburger.active span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .nav__hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .nav__hamburger.active span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile menu — sits below nav so hamburger stays clickable */
