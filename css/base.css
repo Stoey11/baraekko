@@ -5,37 +5,59 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  color: var(--clr-espresso);
-  background-color: var(--clr-cream);
+  color: var(--clr-ink);
+  background-color: var(--clr-bg);
+  font-weight: 400;
 }
 
-h1, h2, h3 {
+/* Editorial headlines — heavy, uppercase, tight tracking */
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  line-height: 1.2;
-  color: var(--clr-dark);
+  font-weight: 800;
+  line-height: 0.95;
+  color: var(--clr-ink);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); }
-
-p {
-  max-width: 65ch;
-  line-height: 1.7;
+h3 {
+  font-size: var(--fs-h3);
+  letter-spacing: 0;
+  line-height: 1.15;
 }
 
+p {
+  max-width: 60ch;
+  line-height: 1.55;
+  color: var(--clr-ink-soft);
+}
+
+strong, b { font-weight: 600; color: var(--clr-ink); }
+
 a {
-  color: var(--clr-amber);
+  color: var(--clr-ink);
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--clr-sienna);
+  color: var(--clr-accent);
 }
 
 ::selection {
-  background-color: var(--clr-amber);
-  color: var(--clr-white);
+  background-color: var(--clr-ink);
+  color: var(--clr-bg);
+}
+
+/* Eyebrow label — small uppercase tag */
+.eyebrow {
+  display: inline-block;
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--clr-ink-soft);
 }
 
 /* Page transition */
