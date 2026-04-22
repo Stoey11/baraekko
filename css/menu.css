@@ -1,13 +1,12 @@
-/* ===== MENU PAGE ===== */
+/* ===== MENU PAGE — Editorial style ===== */
 
 /* Sticky category tabs */
 .menu-tabs {
   position: sticky;
   top: var(--nav-height);
   z-index: 50;
-  background-color: var(--clr-cream);
-  border-bottom: 1px solid var(--clr-sand);
-  padding: 0;
+  background-color: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-line);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -26,10 +25,13 @@
 }
 
 .menu-tab {
-  padding: 1rem 1.5rem;
-  font-weight: 500;
-  font-size: var(--fs-small);
-  color: var(--clr-espresso);
+  padding: 1.125rem 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--clr-ink-soft);
   white-space: nowrap;
   position: relative;
   cursor: pointer;
@@ -41,21 +43,22 @@
 .menu-tab::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 1.5rem;
-  right: 1.5rem;
-  height: 3px;
-  background-color: var(--clr-amber);
+  bottom: -1px;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 2px;
+  background-color: var(--clr-ink);
   transform: scaleX(0);
+  transform-origin: left;
   transition: transform var(--transition-base);
 }
 
 .menu-tab:hover {
-  color: var(--clr-amber);
+  color: var(--clr-ink);
 }
 
 .menu-tab.active {
-  color: var(--clr-amber);
+  color: var(--clr-ink);
 }
 
 .menu-tab.active::after {
@@ -65,74 +68,87 @@
 /* Menu sections */
 .menu-section {
   padding: var(--space-xl) 0;
+  background-color: var(--clr-bg);
 }
 
-.menu-section:nth-child(odd) {
-  background-color: var(--clr-cream);
-}
-
-.menu-section:nth-child(even) {
-  background-color: var(--clr-white);
+.menu-section + .menu-section {
+  border-top: 1px solid var(--clr-line);
 }
 
 .menu-section--dark {
-  background-color: var(--clr-dark) !important;
-  color: var(--clr-parchment);
+  background-color: var(--clr-ink) !important;
+  color: var(--clr-bg);
 }
 
-.menu-section--dark .menu-item__name {
-  color: var(--clr-parchment);
+.menu-section--dark .menu-section__header h2,
+.menu-section--dark .menu-item__name,
+.menu-section--dark .cocktail-card__name {
+  color: var(--clr-bg);
 }
 
-.menu-section--dark .menu-item__desc {
-  color: var(--clr-sand);
+.menu-section--dark .menu-section__header p,
+.menu-section--dark .menu-item__desc,
+.menu-section--dark .cocktail-card__desc {
+  color: var(--clr-bg);
+  opacity: 0.7;
 }
 
 .menu-section--dark .menu-item__price {
-  color: var(--clr-amber);
+  color: var(--clr-accent);
+}
+
+.menu-section--dark .menu-item {
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+
+.menu-section--dark .cocktail-card {
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .menu-section__header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-lg);
+  max-width: var(--container-max);
 }
 
 .menu-section__header h2 {
   margin-bottom: var(--space-xs);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.95;
 }
 
 .menu-section__header p {
-  color: var(--clr-sand);
-  font-style: italic;
-  margin: 0 auto;
+  color: var(--clr-ink-soft);
+  font-style: normal;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  margin: 0;
+  max-width: 50ch;
 }
 
 .menu-section__divider {
-  width: 60px;
-  height: 2px;
-  background-color: var(--clr-amber);
-  margin: var(--space-sm) auto;
+  display: none;
 }
 
-/* Menu items grid */
+/* Menu items list */
 .menu-items {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-sm);
-  max-width: 700px;
-  margin: 0 auto;
+  gap: 0;
+  max-width: 850px;
+  margin: 0;
 }
 
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(196, 184, 165, 0.3);
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--clr-line);
 }
 
-.menu-item:last-child {
-  border-bottom: none;
+.menu-item:first-child {
+  border-top: 1px solid var(--clr-line);
 }
 
 .menu-item__info {
@@ -141,22 +157,29 @@
 }
 
 .menu-item__name {
-  font-weight: 600;
-  font-size: var(--fs-body);
-  color: var(--clr-espresso);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  color: var(--clr-ink);
 }
 
 .menu-item__desc {
   font-size: var(--fs-small);
-  color: var(--clr-sand);
-  margin-top: 0.15rem;
+  color: var(--clr-ink-soft);
+  margin-top: 0.25rem;
+  max-width: 55ch;
+  line-height: 1.45;
 }
 
 .menu-item__price {
-  font-weight: 600;
-  font-size: var(--fs-body);
-  color: var(--clr-sienna);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  color: var(--clr-ink);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Cocktail cards (special layout) */
@@ -164,42 +187,83 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-md);
-  max-width: 900px;
+  max-width: var(--container-max);
 }
 
 .cocktail-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(196, 184, 165, 0.15);
-  border-radius: var(--radius-lg);
+  background-color: transparent;
+  border: 1px solid var(--clr-line);
+  border-radius: 0;
   padding: var(--space-md);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
 
 .cocktail-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  transform: none;
+  box-shadow: none;
+  border-color: var(--clr-ink);
+}
+
+.menu-section--dark .cocktail-card:hover {
+  border-color: var(--clr-bg);
 }
 
 .cocktail-card__header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.5rem;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .cocktail-card__name {
   font-family: var(--font-display);
-  font-size: var(--fs-h3);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+  line-height: 1.05;
 }
 
 .cocktail-card__desc {
   font-size: var(--fs-small);
-  color: var(--clr-sand);
-  line-height: 1.6;
+  color: var(--clr-ink-soft);
+  line-height: 1.55;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
   .menu-items--cards {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+/* Mobile-specific tweaks */
+@media (max-width: 767px) {
+  .menu-tab {
+    padding: 1rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .menu-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .menu-section__header {
+    margin-bottom: var(--space-md);
+  }
+
+  .menu-item {
+    padding: 0.75rem 0;
+    gap: var(--space-sm);
+  }
+
+  .cocktail-card {
+    padding: var(--space-sm);
+  }
+
+  .cocktail-card__header {
+    gap: var(--space-sm);
   }
 }
