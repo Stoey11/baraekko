@@ -3,170 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Om Bar Vestergade — Historien bag tre venner der skabte Aarhus' hyggeligste bar.">
-  <title>Om Os — Bar Vestergade</title>
+  <meta name="description" content="Om Bar Ækko — Historien bag tre venner der skabte Aarhus' hyggeligste bar.">
+  <title>Om Os — Bar Ækko</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 
   <style>
-    /* About-specific styles */
     .about-story {
-      padding: var(--space-xl) 0;
+      padding: var(--space-2xl) 0;
+      background-color: var(--clr-bg);
     }
 
-    .about-story__text {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-story__text p {
-      margin: 0 auto var(--space-md);
-      font-size: var(--fs-body);
-      line-height: 1.8;
-      color: var(--clr-espresso);
+    .about-story__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      align-items: start;
     }
 
     .about-story__lead {
       font-family: var(--font-display);
-      font-size: var(--fs-h3) !important;
-      font-style: italic;
-      color: var(--clr-sienna) !important;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--clr-ink);
+      max-width: 18ch;
     }
 
-    /* Founders */
+    .about-story__body p {
+      margin-bottom: var(--space-md);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      color: var(--clr-ink-soft);
+      max-width: 55ch;
+    }
+
     .founders {
       padding: var(--space-xl) 0;
-      background-color: var(--clr-white);
+      background-color: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-line);
+      border-bottom: 1px solid var(--clr-line);
+    }
+
+    .founders__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: var(--space-lg);
+      max-width: 18ch;
+      line-height: 0.95;
     }
 
     .founders__grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--space-lg);
-      max-width: 900px;
-      margin: 0 auto;
     }
 
     .founder-card {
-      text-align: center;
+      border-top: 1.5px solid var(--clr-ink);
+      padding-top: var(--space-md);
     }
 
-    .founder-card__photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      margin: 0 auto var(--space-sm);
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--clr-amber) 0%, var(--clr-sienna) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .founder-card__photo span {
-      font-size: 3rem;
-      color: var(--clr-white);
-      font-family: var(--font-display);
+    .founder-card__num {
+      display: block;
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+      margin-bottom: var(--space-md);
     }
 
     .founder-card__name {
       font-family: var(--font-display);
-      font-size: var(--fs-h3);
-      margin-bottom: 0.25rem;
-    }
-
-    .founder-card__role {
-      font-size: var(--fs-small);
-      color: var(--clr-amber);
-      font-weight: 500;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
+      letter-spacing: -0.01em;
       margin-bottom: var(--space-xs);
     }
 
-    .founder-card__quote {
-      font-style: italic;
-      font-size: var(--fs-small);
-      color: var(--clr-sand);
-      max-width: 28ch;
-      margin: 0 auto;
+    .founder-card__role {
+      font-size: var(--fs-eyebrow);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
     }
 
-    /* Values */
+    .founder-card__quote {
+      font-size: var(--fs-body);
+      color: var(--clr-ink-soft);
+      max-width: 32ch;
+      line-height: 1.5;
+    }
+
     .values {
       padding: var(--space-xl) 0;
+      background-color: var(--clr-bg);
+    }
+
+    .values__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: var(--space-lg);
+      max-width: 18ch;
+      line-height: 0.95;
     }
 
     .values__grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--space-md);
-      max-width: 900px;
-      margin: var(--space-lg) auto 0;
+      gap: var(--space-lg);
     }
 
     .value-card {
-      display: flex;
-      gap: var(--space-sm);
-      align-items: flex-start;
-      padding: var(--space-md);
-      background-color: var(--clr-white);
-      border-radius: var(--radius-lg);
-      border-left: 4px solid var(--clr-amber);
+      border-top: 1.5px solid var(--clr-ink);
+      padding-top: var(--space-md);
     }
 
-    .value-card__icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      color: var(--clr-amber);
+    .value-card__num {
+      display: block;
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+      margin-bottom: var(--space-md);
     }
 
     .value-card__title {
       font-family: var(--font-display);
-      font-size: var(--fs-h3);
-      margin-bottom: 0.25rem;
-    }
-
-    .value-card__text {
-      font-size: var(--fs-small);
-      color: var(--clr-espresso);
-      line-height: 1.7;
-    }
-
-    /* CTA band */
-    .about-cta {
-      padding: var(--space-xl) 0;
-      background-color: var(--clr-dark);
-      text-align: center;
-    }
-
-    .about-cta h2 {
-      color: var(--clr-parchment);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
+      letter-spacing: -0.01em;
       margin-bottom: var(--space-sm);
     }
 
-    .about-cta p {
-      color: var(--clr-sand);
-      margin: 0 auto var(--space-md);
+    .value-card__text {
+      font-size: var(--fs-body);
+      color: var(--clr-ink-soft);
+      max-width: 32ch;
+      line-height: 1.5;
     }
 
     @media (min-width: 768px) {
-      .founders__grid {
-        grid-template-columns: repeat(3, 1fr);
+      .about-story__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
       }
 
+      .founders__grid,
       .values__grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
       }
     }
   </style>
@@ -174,16 +176,14 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav nav--scrolled" id="navbar">
+  <nav class="nav" id="navbar">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Bar Vestergade</a>
+      <a href="index.html" class="nav__logo">Bar Ækko</a>
       <div class="nav__links">
         <a href="menu.html">Menukort</a>
         <a href="about.html" class="active">Om Os</a>
         <a href="events.html">Events</a>
-        <a href="booking.html">Booking</a>
       </div>
-      <a href="booking.html" class="btn btn--primary nav__cta">Book Bord</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -194,60 +194,58 @@
     <a href="menu.html">Menukort</a>
     <a href="about.html">Om Os</a>
     <a href="events.html">Events</a>
-    <a href="booking.html">Booking</a>
-    <a href="booking.html" class="btn btn--primary" style="margin-top: 1rem;">Book Bord</a>
   </div>
 
   <!-- Page Header -->
   <header class="page-header">
-    <div>
-      <h1 class="page-header__title">Vores Historie</h1>
-      <p class="page-header__subtitle">Tre venner, én drøm, utallige gode stunder</p>
+    <div class="container">
+      <span class="eyebrow">— Vores Historie</span>
+      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Tre venner.<br>Én drøm.</h1>
+      <p class="page-header__subtitle">Sådan blev Bar Ækko til.</p>
     </div>
   </header>
 
-  <!-- Story Section -->
+  <!-- Story -->
   <section class="about-story">
     <div class="container">
-      <div class="about-story__text" data-animate="fade-up">
-        <p class="about-story__lead">"Alt startede med en simpel idé: at skabe et sted hvor alle føler sig velkomne."</p>
-        <p>Bar Vestergade udsprang af et venskab og en fælles passion for det gode selskab. Vi tre kammerater drømte længe om at åbne et sted, der ikke bare var endnu en bar — men et samlingspunkt. Et sted med sjæl, hvor mennesker naturligt finder sammen.</p>
-        <p>Vi tror på, at de bedste øjeblikke opstår over en god kop kaffe om formiddagen, en iskold fadøl efter arbejde, eller et glas vin til en lang snak med venner. Hos os er der plads til det hele — i et tempo du selv vælger.</p>
-        <p>Med vores beliggenhed på Vestergade, lige i hjertet af Aarhus, inviterer vi dig ind i vores stue. Slå et slag med terningerne, nyd live musik om fredagen, eller bare læn dig tilbage og mærk stemningen.</p>
+      <div class="about-story__grid">
+        <div data-animate="fade-up">
+          <span class="eyebrow">— Begyndelsen</span>
+          <p class="about-story__lead" style="margin-top: var(--space-sm);">Det startede med en simpel idé.</p>
+        </div>
+        <div class="about-story__body" data-animate="fade-up">
+          <p>Bar Ækko udsprang af et venskab og en fælles passion for det gode selskab. Vi tre kammerater drømte længe om at åbne et sted, der ikke bare var endnu en bar — men et samlingspunkt. Et sted med sjæl, hvor mennesker naturligt finder sammen.</p>
+          <p>Vi tror på, at de bedste øjeblikke opstår over en god kop kaffe om formiddagen, en iskold fadøl efter arbejde, eller et glas vin til en lang snak med venner.</p>
+          <p>Med vores beliggenhed på Vestergade, lige i hjertet af Aarhus, inviterer vi dig ind i vores stue.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Founders Section -->
+  <!-- Founders -->
   <section class="founders">
     <div class="container">
-      <h2 class="text-center" data-animate="fade-up">Folkene bag baren</h2>
-      <div class="founders__grid" data-animate="stagger-children" style="margin-top: var(--space-lg);">
+      <h2 class="founders__heading" data-animate="fade-up">Folkene bag baren.</h2>
+      <div class="founders__grid" data-animate="stagger-children">
 
         <div class="founder-card">
-          <div class="founder-card__photo">
-            <span>M</span>
-          </div>
+          <span class="founder-card__num">01</span>
           <h3 class="founder-card__name">Medstifter 1</h3>
-          <p class="founder-card__role">Medstifter</p>
+          <div class="founder-card__role">Medstifter</div>
           <p class="founder-card__quote">"Gode drinks og bedre selskab — det er opskriften."</p>
         </div>
 
         <div class="founder-card">
-          <div class="founder-card__photo">
-            <span>M</span>
-          </div>
+          <span class="founder-card__num">02</span>
           <h3 class="founder-card__name">Medstifter 2</h3>
-          <p class="founder-card__role">Medstifter</p>
+          <div class="founder-card__role">Medstifter</div>
           <p class="founder-card__quote">"Vi ville skabe det sted, vi selv savnede."</p>
         </div>
 
         <div class="founder-card">
-          <div class="founder-card__photo">
-            <span>M</span>
-          </div>
+          <span class="founder-card__num">03</span>
           <h3 class="founder-card__name">Medstifter 3</h3>
-          <p class="founder-card__role">Medstifter</p>
+          <div class="founder-card__role">Medstifter</div>
           <p class="founder-card__quote">"Hygge er ikke noget man planlægger — det er noget man skaber."</p>
         </div>
 
@@ -255,71 +253,55 @@
     </div>
   </section>
 
-  <!-- Values Section -->
+  <!-- Values -->
   <section class="values">
     <div class="container">
-      <h2 class="text-center" data-animate="fade-up">Vores Værdier</h2>
+      <h2 class="values__heading" data-animate="fade-up">Hvad vi tror på.</h2>
       <div class="values__grid" data-animate="stagger-children">
 
         <div class="value-card">
-          <div class="value-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="value-card__title">Fællesskab</h3>
-            <p class="value-card__text">Vi bygger bro mellem mennesker. Her mødes venner, naboer og fremmede over en god drink.</p>
-          </div>
+          <span class="value-card__num">01 / Fællesskab</span>
+          <h3 class="value-card__title">Mennesker først</h3>
+          <p class="value-card__text">Vi bygger bro mellem mennesker. Her mødes venner, naboer og fremmede over en god drink.</p>
         </div>
 
         <div class="value-card">
-          <div class="value-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="value-card__title">Kvalitet</h3>
-            <p class="value-card__text">Fra bønnerne i kaffen til øllen på fad — vi går ikke på kompromis med smagen.</p>
-          </div>
+          <span class="value-card__num">02 / Kvalitet</span>
+          <h3 class="value-card__title">Ingen kompromis</h3>
+          <p class="value-card__text">Fra bønnerne i kaffen til øllen på fad — vi går ikke på kompromis med smagen.</p>
         </div>
 
         <div class="value-card">
-          <div class="value-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="value-card__title">Hygge</h3>
-            <p class="value-card__text">Den danske hygge er kernen i alt vi gør. Varm belysning, god musik og en afslappet stemning.</p>
-          </div>
+          <span class="value-card__num">03 / Hygge</span>
+          <h3 class="value-card__title">Den gode stemning</h3>
+          <p class="value-card__text">Den danske hygge er kernen i alt vi gør. Varm belysning, god musik og en afslappet stemning.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- CTA Band -->
-  <section class="about-cta" data-animate="fade-up">
-    <div class="container">
-      <h2>Kom og besøg os</h2>
-      <p>Vi glæder os til at byde dig velkommen i Bar Vestergade.</p>
-      <a href="booking.html" class="btn btn--primary">Book et bord</a>
+  <!-- Map -->
+  <section class="map-section">
+    <div class="map-section__inner">
+      <iframe
+        class="map-section__frame"
+        src="https://maps.google.com/maps?width=100%25&height=600&hl=da&q=Vestergade%2049,%208000%20Aarhus%20C&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Bar Ækko — Vestergade 49, Aarhus C"
+        allowfullscreen></iframe>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <div class="footer__brand">Bar Ækko</div>
       <div class="footer__grid">
         <div>
-          <h3 class="footer__heading">Bar Vestergade</h3>
-          <p class="footer__text">Vestergade 49 St. h<br>8000 Aarhus C<br><br>kontakt@barvestergade.dk<br>+45 XX XX XX XX</p>
+          <h3 class="footer__heading">Besøg</h3>
+          <p class="footer__text">Vestergade 49 St. h<br>8000 Aarhus C<br><br>kontakt@baraekko.dk<br>+45 XX XX XX XX</p>
         </div>
         <div>
           <h3 class="footer__heading">Sider</h3>
@@ -327,11 +309,10 @@
             <a href="menu.html">Menukort</a>
             <a href="about.html">Om Os</a>
             <a href="events.html">Events</a>
-            <a href="booking.html">Book Bord</a>
           </div>
         </div>
         <div>
-          <h3 class="footer__heading">Følg Os</h3>
+          <h3 class="footer__heading">Følg</h3>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -341,9 +322,14 @@
             </a>
           </div>
         </div>
+        <div>
+          <h3 class="footer__heading">Kontakt</h3>
+          <p class="footer__text">kontakt@baraekko.dk<br>+45 XX XX XX XX</p>
+        </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Bar Vestergade. Alle rettigheder forbeholdes.</p>
+        <p>&copy; 2026 Bar Ækko. Alle rettigheder forbeholdes.</p>
+        <p>Vestergade 49 · 8000 Aarhus C</p>
       </div>
     </div>
   </footer>

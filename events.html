@@ -3,220 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Events hos Bar Vestergade — Live musik, barspil og hygge i Aarhus.">
-  <title>Events — Bar Vestergade</title>
+  <meta name="description" content="Events hos Bar Ækko — Live musik, barspil og hygge i Aarhus.">
+  <title>Events — Bar Ækko</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 
   <style>
-    /* Events-specific styles */
-    .events-intro {
-      padding: var(--space-xl) 0 var(--space-lg);
-      text-align: center;
-    }
-
-    .events-intro p {
-      max-width: 600px;
-      margin: var(--space-sm) auto 0;
-      color: var(--clr-espresso);
-    }
-
-    /* Upcoming events grid */
+    /* Upcoming */
     .upcoming {
-      padding: 0 0 var(--space-xl);
+      padding: var(--space-2xl) 0;
+      background-color: var(--clr-bg);
+    }
+
+    .upcoming__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: var(--space-lg);
+      max-width: 18ch;
+      line-height: 0.95;
     }
 
     .upcoming__grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--space-md);
+      gap: 0;
     }
 
-    .event-card {
-      background-color: var(--clr-white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-      display: flex;
-      flex-direction: column;
+    .event-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+      padding: var(--space-md) 0;
+      border-top: 1px solid var(--clr-line);
     }
 
-    .event-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+    .event-row:last-child {
+      border-bottom: 1px solid var(--clr-line);
     }
 
-    .event-card__top {
-      background-color: var(--clr-dark);
-      padding: var(--space-md);
-      display: flex;
-      gap: var(--space-md);
-      align-items: center;
-    }
-
-    .event-card__date {
-      text-align: center;
-      min-width: 60px;
-    }
-
-    .event-card__day {
+    .event-row__date {
       font-family: var(--font-display);
-      font-size: var(--fs-h2);
-      color: var(--clr-amber);
-      line-height: 1;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: var(--fs-small);
+      color: var(--clr-accent);
     }
 
-    .event-card__month {
+    .event-row__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--clr-ink);
+    }
+
+    .event-row__time {
       font-size: var(--fs-small);
-      color: var(--clr-sand);
+      color: var(--clr-ink-soft);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
-    .event-card__info {
-      flex: 1;
+    .event-row__desc {
+      font-size: var(--fs-body);
+      color: var(--clr-ink-soft);
+      max-width: 55ch;
+      line-height: 1.5;
     }
 
-    .event-card__title {
-      font-family: var(--font-display);
-      font-size: var(--fs-h3);
-      color: var(--clr-parchment);
-      margin-bottom: 0.25rem;
-    }
-
-    .event-card__time {
-      font-size: var(--fs-small);
-      color: var(--clr-amber);
-    }
-
-    .event-card__body {
-      padding: var(--space-md);
-      flex: 1;
-    }
-
-    .event-card__desc {
-      font-size: var(--fs-small);
-      color: var(--clr-espresso);
-      line-height: 1.7;
-    }
-
-    .event-card__tag {
+    .event-row__tag {
       display: inline-block;
-      padding: 0.25rem 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--clr-ink);
       border-radius: var(--radius-pill);
-      font-size: 0.75rem;
+      font-size: var(--fs-eyebrow);
       font-weight: 600;
-      margin-top: var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clr-ink);
+      align-self: start;
     }
 
-    .event-card__tag--music {
-      background-color: var(--clr-burgundy);
-      color: var(--clr-white);
-    }
-
-    .event-card__tag--games {
-      background-color: var(--clr-olive);
-      color: var(--clr-white);
-    }
-
-    .event-card__tag--tasting {
-      background-color: var(--clr-amber);
-      color: var(--clr-white);
-    }
-
-    /* Recurring events */
+    /* Recurring */
     .recurring {
       padding: var(--space-xl) 0;
-      background-color: var(--clr-dark);
+      background-color: var(--clr-ink);
+      color: var(--clr-bg);
     }
 
-    .recurring h2 {
-      color: var(--clr-parchment);
+    .recurring__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: var(--space-lg);
+      color: var(--clr-bg);
+      max-width: 18ch;
+      line-height: 0.95;
     }
 
     .recurring__grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--space-md);
-      margin-top: var(--space-lg);
+      gap: var(--space-lg);
     }
 
     .recurring-card {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(196, 184, 165, 0.15);
-      border-radius: var(--radius-lg);
-      padding: var(--space-md);
-      text-align: center;
-      transition: background-color var(--transition-fast);
+      border-top: 1.5px solid var(--clr-bg);
+      padding-top: var(--space-md);
     }
 
-    .recurring-card:hover {
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .recurring-card__icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto var(--space-sm);
-      color: var(--clr-amber);
+    .recurring-card__num {
+      display: block;
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-bg);
+      opacity: 0.65;
+      margin-bottom: var(--space-md);
     }
 
     .recurring-card__title {
       font-family: var(--font-display);
-      font-size: var(--fs-h3);
-      color: var(--clr-parchment);
-      margin-bottom: 0.25rem;
-    }
-
-    .recurring-card__day {
-      font-size: var(--fs-small);
-      color: var(--clr-amber);
-      font-weight: 600;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
+      letter-spacing: -0.01em;
+      color: var(--clr-bg);
       margin-bottom: var(--space-xs);
     }
 
-    .recurring-card__desc {
-      font-size: var(--fs-small);
-      color: var(--clr-sand);
-      max-width: 30ch;
-      margin: 0 auto;
-    }
-
-    /* Private events CTA */
-    .private-cta {
-      padding: var(--space-xl) 0;
-      text-align: center;
-      background-color: var(--clr-cream);
-    }
-
-    .private-cta h2 {
+    .recurring-card__day {
+      font-size: var(--fs-eyebrow);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      font-weight: 600;
       margin-bottom: var(--space-sm);
     }
 
-    .private-cta p {
-      margin: 0 auto var(--space-md);
-      max-width: 500px;
-      color: var(--clr-espresso);
+    .recurring-card__desc {
+      font-size: var(--fs-body);
+      color: var(--clr-bg);
+      opacity: 0.75;
+      max-width: 32ch;
+      line-height: 1.5;
+    }
+
+    /* Private events */
+    .private {
+      padding: var(--space-2xl) 0;
+      background-color: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-line);
+    }
+
+    .private__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      align-items: end;
+    }
+
+    .private__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      max-width: 14ch;
+      line-height: 0.95;
+    }
+
+    .private__text {
+      max-width: 50ch;
+      color: var(--clr-ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
     }
 
     @media (min-width: 768px) {
-      .upcoming__grid {
-        grid-template-columns: repeat(2, 1fr);
+      .event-row {
+        grid-template-columns: 140px 1fr 200px auto;
+        gap: var(--space-md);
+        align-items: center;
+        padding: var(--space-md) 0;
       }
 
       .recurring__grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+      }
+
+      .private__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
       }
     }
   </style>
@@ -224,16 +210,14 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav nav--scrolled" id="navbar">
+  <nav class="nav" id="navbar">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Bar Vestergade</a>
+      <a href="index.html" class="nav__logo">Bar Ækko</a>
       <div class="nav__links">
         <a href="menu.html">Menukort</a>
         <a href="about.html">Om Os</a>
         <a href="events.html" class="active">Events</a>
-        <a href="booking.html">Booking</a>
       </div>
-      <a href="booking.html" class="btn btn--primary nav__cta">Book Bord</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -244,168 +228,121 @@
     <a href="menu.html">Menukort</a>
     <a href="about.html">Om Os</a>
     <a href="events.html">Events</a>
-    <a href="booking.html">Booking</a>
-    <a href="booking.html" class="btn btn--primary" style="margin-top: 1rem;">Book Bord</a>
   </div>
 
   <!-- Page Header -->
   <header class="page-header">
-    <div>
-      <h1 class="page-header__title">Events</h1>
-      <p class="page-header__subtitle">Der sker altid noget hos Bar Vestergade</p>
+    <div class="container">
+      <span class="eyebrow">— Hvad sker der</span>
+      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Events.</h1>
+      <p class="page-header__subtitle">Der sker altid noget hos Bar Ækko.</p>
     </div>
   </header>
 
-  <!-- Intro -->
-  <section class="events-intro">
-    <div class="container" data-animate="fade-up">
-      <h2>Kommende Events</h2>
-      <p>Fra live musik til klassiske barspil — der er altid en god grund til at kigge forbi.</p>
-    </div>
-  </section>
-
-  <!-- Upcoming Events Grid -->
+  <!-- Upcoming Events -->
   <section class="upcoming">
     <div class="container">
+      <h2 class="upcoming__heading" data-animate="fade-up">Kommende events.</h2>
       <div class="upcoming__grid" data-animate="stagger-children">
 
-        <div class="event-card">
-          <div class="event-card__top">
-            <div class="event-card__date">
-              <div class="event-card__day">18</div>
-              <div class="event-card__month">Apr</div>
-            </div>
-            <div class="event-card__info">
-              <h3 class="event-card__title">Fredag Live Musik</h3>
-              <div class="event-card__time">20:00 — 23:00</div>
-            </div>
+        <div class="event-row">
+          <div class="event-row__date">18 Apr</div>
+          <div>
+            <div class="event-row__title">Fredag Live Musik</div>
+            <p class="event-row__desc" style="margin-top: var(--space-xs);">Akustisk livemusik med lokale kunstnere. Kom og nyd en drink mens du lytter til gode toner.</p>
           </div>
-          <div class="event-card__body">
-            <p class="event-card__desc">Akustisk livemusik med lokale kunstnere. Kom og nyd en drink mens du lytter til gode toner i en intim atmosfære.</p>
-            <span class="event-card__tag event-card__tag--music">Live Musik</span>
-          </div>
+          <div class="event-row__time">20:00 — 23:00</div>
+          <span class="event-row__tag">Live Musik</span>
         </div>
 
-        <div class="event-card">
-          <div class="event-card__top">
-            <div class="event-card__date">
-              <div class="event-card__day">20</div>
-              <div class="event-card__month">Apr</div>
-            </div>
-            <div class="event-card__info">
-              <h3 class="event-card__title">Søndag Barspil</h3>
-              <div class="event-card__time">16:00 — 21:00</div>
-            </div>
+        <div class="event-row">
+          <div class="event-row__date">20 Apr</div>
+          <div>
+            <div class="event-row__title">Søndag Barspil</div>
+            <p class="event-row__desc" style="margin-top: var(--space-xs);">Tag vennerne med til en hyggelig søndag med terningespil, bækker og andre klassiske barspil.</p>
           </div>
-          <div class="event-card__body">
-            <p class="event-card__desc">Tag vennerne med til en hyggelig søndag med terningespil, bækker og andre klassiske barspil. Vi har det hele klar.</p>
-            <span class="event-card__tag event-card__tag--games">Barspil</span>
-          </div>
+          <div class="event-row__time">16:00 — 21:00</div>
+          <span class="event-row__tag">Barspil</span>
         </div>
 
-        <div class="event-card">
-          <div class="event-card__top">
-            <div class="event-card__date">
-              <div class="event-card__day">24</div>
-              <div class="event-card__month">Apr</div>
-            </div>
-            <div class="event-card__info">
-              <h3 class="event-card__title">Vinsmagning</h3>
-              <div class="event-card__time">18:00 — 20:00</div>
-            </div>
+        <div class="event-row">
+          <div class="event-row__date">24 Apr</div>
+          <div>
+            <div class="event-row__title">Vinsmagning</div>
+            <p class="event-row__desc" style="margin-top: var(--space-xs);">Smag dig igennem 5 udvalgte vine fra Sydeuropa. Inkluderer oliven og ost. Begrænset antal pladser.</p>
           </div>
-          <div class="event-card__body">
-            <p class="event-card__desc">Smag dig igennem 5 udvalgte vine fra Sydeuropa. Inkluderer oliven og ost. Begrænset antal pladser.</p>
-            <span class="event-card__tag event-card__tag--tasting">Smagning</span>
-          </div>
+          <div class="event-row__time">18:00 — 20:00</div>
+          <span class="event-row__tag">Smagning</span>
         </div>
 
-        <div class="event-card">
-          <div class="event-card__top">
-            <div class="event-card__date">
-              <div class="event-card__day">25</div>
-              <div class="event-card__month">Apr</div>
-            </div>
-            <div class="event-card__info">
-              <h3 class="event-card__title">DJ Night</h3>
-              <div class="event-card__time">21:00 — 00:00</div>
-            </div>
+        <div class="event-row">
+          <div class="event-row__date">25 Apr</div>
+          <div>
+            <div class="event-row__title">DJ Night</div>
+            <p class="event-row__desc" style="margin-top: var(--space-xs);">Fredag aften med DJ der spiller funk, soul og disco. Dans, drik og hav en fantastisk aften.</p>
           </div>
-          <div class="event-card__body">
-            <p class="event-card__desc">Fredag aften med DJ der spiller funk, soul og disco. Dans, drik og hav en fantastisk aften.</p>
-            <span class="event-card__tag event-card__tag--music">Live Musik</span>
-          </div>
+          <div class="event-row__time">21:00 — 00:00</div>
+          <span class="event-row__tag">Live Musik</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Recurring Events -->
+  <!-- Recurring -->
   <section class="recurring">
     <div class="container">
-      <h2 class="text-center" data-animate="fade-up">Faste Events</h2>
+      <h2 class="recurring__heading" data-animate="fade-up">Faste events.</h2>
       <div class="recurring__grid" data-animate="stagger-children">
 
         <div class="recurring-card">
-          <div class="recurring-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M9 9h6v6H9z"/>
-              <circle cx="10.5" cy="10.5" r="0.5" fill="currentColor"/>
-              <circle cx="13.5" cy="13.5" r="0.5" fill="currentColor"/>
-            </svg>
-          </div>
+          <span class="recurring-card__num">01</span>
           <h3 class="recurring-card__title">Barspil Søndag</h3>
-          <p class="recurring-card__day">Hver søndag, 16:00</p>
+          <div class="recurring-card__day">Hver søndag, 16:00</div>
           <p class="recurring-card__desc">Terninger, bækker og klassiske barspil. Kom og udfordr vennerne.</p>
         </div>
 
         <div class="recurring-card">
-          <div class="recurring-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M9 18V5l12-2v13"/>
-              <circle cx="6" cy="18" r="3"/>
-              <circle cx="18" cy="16" r="3"/>
-            </svg>
-          </div>
+          <span class="recurring-card__num">02</span>
           <h3 class="recurring-card__title">Fredags Live</h3>
-          <p class="recurring-card__day">Hver fredag, 20:00</p>
+          <div class="recurring-card__day">Hver fredag, 20:00</div>
           <p class="recurring-card__desc">Akustisk livemusik med skiftende kunstnere fra Aarhus-scenen.</p>
         </div>
 
         <div class="recurring-card">
-          <div class="recurring-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-              <path d="M12 14l2 2 4-4"/>
-            </svg>
-          </div>
+          <span class="recurring-card__num">03</span>
           <h3 class="recurring-card__title">Torsdag Vinsmagning</h3>
-          <p class="recurring-card__day">Sidste torsdag i måneden</p>
-          <p class="recurring-card__desc">Tematisk vinsmagning med snacks. Book din plads i forvejen.</p>
+          <div class="recurring-card__day">Sidste torsdag i måneden</div>
+          <p class="recurring-card__desc">Tematisk vinsmagning med snacks. Skriv til os for at sikre din plads.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Private Events CTA -->
-  <section class="private-cta" data-animate="fade-up">
+  <!-- Private events -->
+  <section class="private" data-animate="fade-up">
     <div class="container">
-      <h2>Hold dit event hos os</h2>
-      <p>Fødselsdag, firmafest eller bare en god aften med vennerne? Vi skaber rammerne — du fylder dem med liv.</p>
-      <a href="booking.html" class="btn btn--primary">Kontakt os</a>
+      <div class="private__grid">
+        <div>
+          <span class="eyebrow">— Private arrangementer</span>
+          <h2 class="private__heading" style="margin-top: var(--space-sm);">Hold dit event hos os.</h2>
+        </div>
+        <div>
+          <p class="private__text">Fødselsdag, firmafest eller bare en god aften med vennerne? Vi skaber rammerne — du fylder dem med liv. Skriv til os på <strong>kontakt@baraekko.dk</strong> for en uforpligtende snak.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <div class="footer__brand">Bar Ækko</div>
       <div class="footer__grid">
         <div>
-          <h3 class="footer__heading">Bar Vestergade</h3>
-          <p class="footer__text">Vestergade 49 St. h<br>8000 Aarhus C<br><br>kontakt@barvestergade.dk<br>+45 XX XX XX XX</p>
+          <h3 class="footer__heading">Besøg</h3>
+          <p class="footer__text">Vestergade 49 St. h<br>8000 Aarhus C<br><br>kontakt@baraekko.dk<br>+45 XX XX XX XX</p>
         </div>
         <div>
           <h3 class="footer__heading">Sider</h3>
@@ -413,11 +350,10 @@
             <a href="menu.html">Menukort</a>
             <a href="about.html">Om Os</a>
             <a href="events.html">Events</a>
-            <a href="booking.html">Book Bord</a>
           </div>
         </div>
         <div>
-          <h3 class="footer__heading">Følg Os</h3>
+          <h3 class="footer__heading">Følg</h3>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -427,9 +363,14 @@
             </a>
           </div>
         </div>
+        <div>
+          <h3 class="footer__heading">Kontakt</h3>
+          <p class="footer__text">kontakt@baraekko.dk<br>+45 XX XX XX XX</p>
+        </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Bar Vestergade. Alle rettigheder forbeholdes.</p>
+        <p>&copy; 2026 Bar Ækko. Alle rettigheder forbeholdes.</p>
+        <p>Vestergade 49 · 8000 Aarhus C</p>
       </div>
     </div>
   </footer>

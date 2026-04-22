@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bar Vestergade menukort — Kaffe, fadøl, vin, cocktails og snacks i Aarhus.">
-  <title>Menukort — Bar Vestergade</title>
+  <meta name="description" content="Bar Ækko menukort — Kaffe, fadøl, vin, cocktails og snacks i Aarhus.">
+  <title>Menukort — Bar Ækko</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
@@ -16,22 +16,21 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav nav--scrolled" id="navbar">
+  <nav class="nav" id="navbar">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Bar Vestergade</a>
+      <a href="index.html" class="nav__logo">Bar Ækko</a>
       <div class="nav__links">
         <a href="menu.html" class="active">Menukort</a>
         <a href="about.html">Om Os</a>
         <a href="events.html">Events</a>
-        <a href="booking.html">Booking</a>
       </div>
-      <a href="booking.html" class="btn btn--primary nav__cta">Book Bord</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -42,15 +41,14 @@
     <a href="menu.html">Menukort</a>
     <a href="about.html">Om Os</a>
     <a href="events.html">Events</a>
-    <a href="booking.html">Booking</a>
-    <a href="booking.html" class="btn btn--primary" style="margin-top: 1rem;">Book Bord</a>
   </div>
 
   <!-- Page Header -->
   <header class="page-header">
-    <div>
-      <h1 class="page-header__title">Menukort</h1>
-      <p class="page-header__subtitle">Fra morgenkaffe til midnatscocktails</p>
+    <div class="container">
+      <span class="eyebrow">— Drikke & Snacks</span>
+      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Menukort</h1>
+      <p class="page-header__subtitle">Fra morgenkaffe til midnatscocktails.</p>
     </div>
   </header>
 
@@ -71,7 +69,7 @@
       <div class="menu-section__header" data-animate="fade-up">
         <h2>Kaffe</h2>
         <div class="menu-section__divider"></div>
-        <p>Friskbrygget kvalitetskaffe</p>
+        <p>Friskbrygget kvalitetskaffe.</p>
       </div>
       <div class="menu-items" data-animate="stagger-children">
         <div class="menu-item">
@@ -79,42 +77,42 @@
             <div class="menu-item__name">Espresso</div>
             <div class="menu-item__desc">Klassisk og intens</div>
           </div>
-          <div class="menu-item__price">28 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Americano</div>
             <div class="menu-item__desc">Espresso med varmt vand</div>
           </div>
-          <div class="menu-item__price">32 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Café Latte</div>
             <div class="menu-item__desc">Espresso med dampet mælk</div>
           </div>
-          <div class="menu-item__price">38 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Cappuccino</div>
             <div class="menu-item__desc">Espresso, mælk og skum</div>
           </div>
-          <div class="menu-item__price">38 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Flat White</div>
             <div class="menu-item__desc">Dobbelt espresso med silkemælk</div>
           </div>
-          <div class="menu-item__price">42 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Chai Latte</div>
             <div class="menu-item__desc">Krydret te med dampet mælk</div>
           </div>
-          <div class="menu-item__price">40 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
       </div>
     </div>
@@ -126,7 +124,7 @@
       <div class="menu-section__header" data-animate="fade-up">
         <h2>Fadøl</h2>
         <div class="menu-section__divider"></div>
-        <p>Udvalgte øl fra danske og internationale bryggerier</p>
+        <p>Udvalgte øl fra danske og internationale bryggerier.</p>
       </div>
       <div class="menu-items" data-animate="stagger-children">
         <div class="menu-item">
@@ -134,35 +132,35 @@
             <div class="menu-item__name">Pilsner</div>
             <div class="menu-item__desc">Klassisk dansk pilsner — frisk og let</div>
           </div>
-          <div class="menu-item__price">45 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">IPA</div>
             <div class="menu-item__desc">Hoppet og aromatisk med citrusnotes</div>
           </div>
-          <div class="menu-item__price">55 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Wheat Beer</div>
             <div class="menu-item__desc">Belgisk hvedeøl med let sødme</div>
           </div>
-          <div class="menu-item__price">52 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Stout</div>
             <div class="menu-item__desc">Mørk og fyldig med kaffe- og chokoladetoner</div>
           </div>
-          <div class="menu-item__price">55 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Session Ale</div>
             <div class="menu-item__desc">Let og drikkelig — perfekt til en lang aften</div>
           </div>
-          <div class="menu-item__price">48 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
       </div>
     </div>
@@ -174,7 +172,7 @@
       <div class="menu-section__header" data-animate="fade-up">
         <h2>Vin</h2>
         <div class="menu-section__divider"></div>
-        <p>Nøje udvalgte vine fra Europa</p>
+        <p>Nøje udvalgte vine fra Europa.</p>
       </div>
       <div class="menu-items" data-animate="stagger-children">
         <div class="menu-item">
@@ -182,28 +180,28 @@
             <div class="menu-item__name">Husets Hvidvin</div>
             <div class="menu-item__desc">Frisk og let med grønne æblenoter</div>
           </div>
-          <div class="menu-item__price">55 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Husets Rødvin</div>
             <div class="menu-item__desc">Blød og rund med bærfrugt</div>
           </div>
-          <div class="menu-item__price">55 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Rosé</div>
             <div class="menu-item__desc">Provence-stil — tør og forfriskende</div>
           </div>
-          <div class="menu-item__price">58 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Prosecco</div>
             <div class="menu-item__desc">Glas af italiensk mousserende</div>
           </div>
-          <div class="menu-item__price">60 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
       </div>
     </div>
@@ -215,48 +213,48 @@
       <div class="menu-section__header" data-animate="fade-up">
         <h2>Cocktails</h2>
         <div class="menu-section__divider"></div>
-        <p>Klassikere og kreative signaturer</p>
+        <p>Klassikere og kreative signaturer.</p>
       </div>
       <div class="menu-items--cards" style="margin: 0 auto;" data-animate="stagger-children">
         <div class="cocktail-card">
           <div class="cocktail-card__header">
             <div class="cocktail-card__name">Aperol Spritz</div>
-            <div class="menu-item__price">75 kr</div>
+            <div class="menu-item__price">xx</div>
           </div>
           <div class="cocktail-card__desc">Aperol, prosecco, danskvand. Den perfekte solnedgangsdrink.</div>
         </div>
         <div class="cocktail-card">
           <div class="cocktail-card__header">
             <div class="cocktail-card__name">Gin & Tonic</div>
-            <div class="menu-item__price">70 kr</div>
+            <div class="menu-item__price">xx</div>
           </div>
           <div class="cocktail-card__desc">Premium gin, tonic, agurk og citrus. Klassisk og forfriskende.</div>
         </div>
         <div class="cocktail-card">
           <div class="cocktail-card__header">
             <div class="cocktail-card__name">Espresso Martini</div>
-            <div class="menu-item__price">85 kr</div>
+            <div class="menu-item__price">xx</div>
           </div>
-          <div class="cocktail-card__desc">Vodka, kaffetlikør, frisk espresso. Vågn op og nyd aftenen.</div>
+          <div class="cocktail-card__desc">Vodka, kaffelikør, frisk espresso. Vågn op og nyd aftenen.</div>
         </div>
         <div class="cocktail-card">
           <div class="cocktail-card__header">
             <div class="cocktail-card__name">Negroni</div>
-            <div class="menu-item__price">80 kr</div>
+            <div class="menu-item__price">xx</div>
           </div>
           <div class="cocktail-card__desc">Gin, Campari, rød vermouth. Bitter, balanceret, tidløs.</div>
         </div>
         <div class="cocktail-card">
           <div class="cocktail-card__header">
-            <div class="cocktail-card__name">Vestergade Sour</div>
-            <div class="menu-item__price">80 kr</div>
+            <div class="cocktail-card__name">Ækko Sour</div>
+            <div class="menu-item__price">xx</div>
           </div>
           <div class="cocktail-card__desc">Vores signaturdrink — bourbon, citron, honningsirup og æggehvide.</div>
         </div>
         <div class="cocktail-card">
           <div class="cocktail-card__header">
             <div class="cocktail-card__name">Moscow Mule</div>
-            <div class="menu-item__price">75 kr</div>
+            <div class="menu-item__price">xx</div>
           </div>
           <div class="cocktail-card__desc">Vodka, ginger beer, frisk lime. Serveret i kobber-krus.</div>
         </div>
@@ -265,12 +263,12 @@
   </section>
 
   <!-- Snacks Section -->
-  <section class="menu-section" id="snacks" style="background-color: var(--clr-cream);">
+  <section class="menu-section" id="snacks">
     <div class="container">
       <div class="menu-section__header" data-animate="fade-up">
         <h2>Snacks</h2>
         <div class="menu-section__divider"></div>
-        <p>Noget at nippe til ved siden af</p>
+        <p>Noget at nippe til ved siden af.</p>
       </div>
       <div class="menu-items" data-animate="stagger-children">
         <div class="menu-item">
@@ -278,28 +276,28 @@
             <div class="menu-item__name">Oliven</div>
             <div class="menu-item__desc">Marinerede grønne og sorte oliven</div>
           </div>
-          <div class="menu-item__price">30 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Blandede Nødder</div>
             <div class="menu-item__desc">Ristede og let saltede</div>
           </div>
-          <div class="menu-item__price">25 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Chips</div>
             <div class="menu-item__desc">Håndlavede chips med havsalt</div>
           </div>
-          <div class="menu-item__price">25 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
         <div class="menu-item">
           <div class="menu-item__info">
             <div class="menu-item__name">Snack Platter</div>
             <div class="menu-item__desc">Oliven, nødder og chips — perfekt til deling</div>
           </div>
-          <div class="menu-item__price">65 kr</div>
+          <div class="menu-item__price">xx</div>
         </div>
       </div>
     </div>
@@ -308,10 +306,17 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <div class="footer__brand">Bar Ækko</div>
+
       <div class="footer__grid">
         <div>
-          <h3 class="footer__heading">Bar Vestergade</h3>
-          <p class="footer__text">Vestergade 49 St. h<br>8000 Aarhus C<br><br>kontakt@barvestergade.dk<br>+45 XX XX XX XX</p>
+          <h3 class="footer__heading">Besøg</h3>
+          <p class="footer__text">
+            Vestergade 49 St. h<br>
+            8000 Aarhus C<br><br>
+            kontakt@baraekko.dk<br>
+            +45 XX XX XX XX
+          </p>
         </div>
         <div>
           <h3 class="footer__heading">Sider</h3>
@@ -319,11 +324,10 @@
             <a href="menu.html">Menukort</a>
             <a href="about.html">Om Os</a>
             <a href="events.html">Events</a>
-            <a href="booking.html">Book Bord</a>
           </div>
         </div>
         <div>
-          <h3 class="footer__heading">Følg Os</h3>
+          <h3 class="footer__heading">Følg</h3>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -333,9 +337,17 @@
             </a>
           </div>
         </div>
+        <div>
+          <h3 class="footer__heading">Kontakt</h3>
+          <p class="footer__text">
+            kontakt@baraekko.dk<br>
+            +45 XX XX XX XX
+          </p>
+        </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Bar Vestergade. Alle rettigheder forbeholdes.</p>
+        <p>&copy; 2026 Bar Ækko. Alle rettigheder forbeholdes.</p>
+        <p>Vestergade 49 · 8000 Aarhus C</p>
       </div>
     </div>
   </footer>

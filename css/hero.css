@@ -329,6 +329,26 @@
   letter-spacing: 0.1em;
 }
 
+/* ===== Map ===== */
+.map-section {
+  background-color: var(--clr-bg);
+  border-top: 1px solid var(--clr-line);
+}
+
+.map-section__inner {
+  width: 100%;
+  height: clamp(320px, 50vh, 520px);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-section__frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* ===== Marquee strip — bonus editorial flair ===== */
 .marquee {
   background-color: var(--clr-bg);
@@ -398,7 +418,7 @@
   }
 
   .hero__title {
-    font-size: clamp(2.25rem, 13vw, 5rem);
+    font-size: clamp(2.75rem, 18vw, 6rem);
     letter-spacing: -0.05em;
   }
 
