@@ -311,12 +311,20 @@
   margin-bottom: var(--space-sm);
 }
 
-.footer__logo-img {
-  width: clamp(72px, 9vw, 100px);
-  height: clamp(72px, 9vw, 100px);
-  display: block;
+.footer__brand-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  flex-wrap: wrap;
   margin-bottom: var(--space-md);
+}
+
+.footer__logo-img {
+  width: clamp(64px, 8vw, 90px);
+  height: clamp(64px, 8vw, 90px);
+  display: block;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .footer__brand {
@@ -327,7 +335,7 @@
   letter-spacing: -0.03em;
   line-height: 0.9;
   color: var(--clr-bg);
-  margin-bottom: var(--space-md);
+  margin: 0;
 }
 
 .footer__text {
