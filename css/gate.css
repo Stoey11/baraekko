@@ -1,0 +1,120 @@
+/* Coming-soon gate overlay */
+html:not(.access-granted),
+html:not(.access-granted) body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--clr-bg, #F4EFE6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+html.access-granted #gate-overlay {
+  display: none;
+}
+
+.gate-content {
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  animation: gate-fade-in 0.8s ease-out;
+}
+
+@keyframes gate-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gate-logo {
+  width: clamp(140px, 26vw, 200px);
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.gate-title {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 9vw, 4.75rem);
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: var(--clr-ink, #1A1A1A);
+  line-height: 1;
+}
+
+.gate-sub {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-ink, #1A1A1A);
+  margin: 1.75rem 0 0.4rem;
+}
+
+.gate-info {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: var(--clr-ink-soft, #4A4A4A);
+  margin: 0 0 2.5rem;
+}
+
+.gate-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gate-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  border-radius: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  background: var(--clr-cream, #FAF6EE);
+  color: var(--clr-ink, #1A1A1A);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.gate-form input:focus {
+  border-color: var(--clr-ink, #1A1A1A);
+}
+
+.gate-form button {
+  padding: 0.85rem 1.6rem;
+  background: var(--clr-ink, #1A1A1A);
+  color: var(--clr-bg, #F4EFE6);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease;
+}
+
+.gate-form button:hover {
+  background: var(--clr-ink-soft, #4A4A4A);
+}
+
+.gate-error {
+  color: var(--clr-accent, #C8531C);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.875rem;
+  margin: 1rem 0 0;
+  min-height: 1.25rem;
+}

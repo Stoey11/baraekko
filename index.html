@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bar Ækko. En bar i hjertet af Aarhus. Fadøl, vin, cocktails og hyggelige aftener.">
-  <meta property="og:title" content="Bar Ækko">
-  <meta property="og:description" content="En bar i hjertet af Aarhus. Fadøl, vin, cocktails og hyggelige aftener.">
+  <meta name="description" content="Vi åbner snart. Bar Ækko – en ny bar i hjertet af Aarhus med fadøl, vin, cocktails og hyggelige aftener.">
+  <meta property="og:title" content="Bar Ækko – vi åbner snart">
+  <meta property="og:description" content="Vi åbner snart. En ny bar i hjertet af Aarhus med fadøl, vin, cocktails og hyggelige aftener.">
   <title>Bar Ækko · Aarhus</title>
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -14,6 +14,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/gate.css">
+  <script>
+    try {
+      if (localStorage.getItem('baraekko_access') === 'granted') {
+        document.documentElement.classList.add('access-granted');
+      }
+    } catch (_) {}
+  </script>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
@@ -25,6 +34,21 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+
+  <!-- Coming-soon gate -->
+  <div id="gate-overlay" aria-modal="true" role="dialog" aria-label="Bar Ækko – vi åbner snart">
+    <div class="gate-content">
+      <img src="assets/favicon.png" alt="" class="gate-logo">
+      <h1 class="gate-title">BAR ÆKKO</h1>
+      <p class="gate-sub">Vi åbner snart</p>
+      <p class="gate-info">Mere information følger</p>
+      <form id="gate-form" class="gate-form" autocomplete="off">
+        <input type="password" id="gate-password" placeholder="Adgangskode" autocomplete="off" spellcheck="false" aria-label="Adgangskode">
+        <button type="submit">Adgang</button>
+      </form>
+      <p id="gate-error" class="gate-error" role="alert"></p>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav class="nav" id="navbar">
@@ -241,6 +265,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/gate.js"></script>
   <script src="js/main.js"></script>
   <script src="js/hero-animation.js"></script>
   <script src="js/scroll-animations.js"></script>
