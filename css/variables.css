@@ -1,8 +1,8 @@
 :root {
   /* ===== COLORS — Editorial / Sesam-inspired ===== */
-  /* Base */
-  --clr-bg: #F4EFE6;          /* Warm off-white background */
-  --clr-bg-alt: #ECE5D6;      /* Slightly deeper cream for alt sections */
+  /* Base — matchet til logo-baggrundsfarven */
+  --clr-bg: #F3E7DA;          /* Warm cream — matches logo bg */
+  --clr-bg-alt: #EADDCB;      /* Slightly deeper cream for alt sections */
   --clr-ink: #1A1A1A;         /* Near-black text */
   --clr-ink-soft: #4A4A4A;    /* Secondary text */
   --clr-line: rgba(26, 26, 26, 0.12);
@@ -10,7 +10,7 @@
   /* Accents */
   --clr-accent: #C8531C;      /* Burnt orange — used sparingly */
   --clr-accent-hover: #A4421A;
-  --clr-cream: #FAF6EE;
+  --clr-cream: #F9EFE0;
 
   /* Legacy aliases (so old refs don't break) */
   --clr-dark: var(--clr-ink);
