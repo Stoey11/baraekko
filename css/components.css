@@ -34,6 +34,16 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--clr-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.nav__logo-img {
+  height: 38px;
+  width: 38px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav__links {
@@ -299,6 +309,14 @@
   color: var(--clr-bg);
   opacity: 0.6;
   margin-bottom: var(--space-sm);
+}
+
+.footer__logo-img {
+  width: clamp(72px, 9vw, 100px);
+  height: clamp(72px, 9vw, 100px);
+  display: block;
+  margin-bottom: var(--space-md);
+  border-radius: 4px;
 }
 
 .footer__brand {
