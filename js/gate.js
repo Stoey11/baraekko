@@ -1,5 +1,5 @@
 (function () {
-  var PASSWORD = 'baraekko.dk!!!';
+  var PASSWORD = 'baraekko.dk!!!.';
   var STORAGE_KEY = 'baraekko_access';
 
   function init() {
