@@ -101,9 +101,22 @@ html.access-granted #gate-overlay {
 .gate-event__text {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--clr-ink, #1A1A1A);
-  margin: 0;
+  margin: 0 0 0.7rem;
+}
+
+.gate-event__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.gate-event__cta {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--clr-olive, #5C6B3C);
+  margin: 0.85rem 0 0;
 }
 
 .gate-form {
