@@ -64,57 +64,100 @@ html.access-granted #gate-overlay {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.95rem;
   color: var(--clr-ink-soft, #4A4A4A);
-  margin: 0 0 2.5rem;
+  margin: 0 0 2rem;
+}
+
+/* Card holding the event announcement + login */
+.gate-card {
+  background: var(--clr-cream, #F9EFE0);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 22px 50px -28px rgba(26, 26, 26, 0.5);
+}
+
+/* Vestergade Fest announcement */
+.gate-event {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.gate-event__badge {
+  display: inline-block;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--clr-olive, #5C6B3C);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill, 100px);
+  margin-bottom: 0.9rem;
+}
+
+.gate-event__text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--clr-ink, #1A1A1A);
+  margin: 0;
 }
 
 .gate-form {
   display: flex;
-  gap: 0.5rem;
-  align-items: stretch;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.65rem;
 }
 
 .gate-form input {
-  flex: 1;
-  min-width: 200px;
-  padding: 0.85rem 1.1rem;
-  border: 1px solid rgba(26, 26, 26, 0.2);
-  border-radius: 4px;
+  width: 100%;
+  padding: 0.95rem 1.15rem;
+  border: 1px solid rgba(26, 26, 26, 0.18);
+  border-radius: 12px;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 1rem;
-  background: var(--clr-cream, #FAF6EE);
+  background: #fff;
   color: var(--clr-ink, #1A1A1A);
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gate-form input:focus {
-  border-color: var(--clr-ink, #1A1A1A);
+  border-color: var(--clr-olive, #5C6B3C);
+  box-shadow: 0 0 0 3px rgba(92, 107, 60, 0.15);
 }
 
 .gate-form button {
-  padding: 0.85rem 1.6rem;
+  width: 100%;
+  padding: 0.95rem 1.6rem;
   background: var(--clr-ink, #1A1A1A);
-  color: var(--clr-bg, #F4EFE6);
+  color: var(--clr-bg, #F3E7DA);
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 0.05em;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .gate-form button:hover {
   background: var(--clr-ink-soft, #4A4A4A);
 }
 
+.gate-form button:active {
+  transform: translateY(1px);
+}
+
 .gate-error {
   color: var(--clr-accent, #C8531C);
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.875rem;
-  margin: 1rem 0 0;
+  margin: 0.9rem 0 0;
   min-height: 1.25rem;
+  text-align: center;
 }
