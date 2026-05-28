@@ -8,7 +8,7 @@
     var error = document.getElementById('gate-error');
     if (!form || !input) return;
 
-    input.focus();
+    input.focus({ preventScroll: true });
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -19,7 +19,7 @@
       } else {
         error.textContent = 'Forkert kode. Prøv igen.';
         input.value = '';
-        input.focus();
+        input.focus({ preventScroll: true });
       }
     });
   }
