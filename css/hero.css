@@ -172,8 +172,8 @@
 }
 
 .welcome__image {
-  aspect-ratio: 4/5;
-  background-color: var(--clr-bg-alt);
+  aspect-ratio: 642/607;
+  background-color: var(--clr-bg);
   overflow: hidden;
   position: relative;
 }
@@ -181,7 +181,7 @@
 .welcome__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .welcome__image-placeholder {
