@@ -97,6 +97,35 @@
       height: auto;
     }
 
+    .btn--light {
+      border-color: var(--clr-bg);
+      color: var(--clr-bg);
+      background-color: transparent;
+    }
+
+    .btn--light:hover {
+      background-color: var(--clr-bg);
+      color: var(--clr-ink);
+    }
+
+    .welcome__image--photo {
+      display: block;
+      aspect-ratio: 4/3;
+      background-color: var(--clr-bg-alt);
+    }
+
+    .welcome__image--photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform var(--transition-slow);
+    }
+
+    .welcome__image--photo:hover img {
+      transform: scale(1.02);
+    }
+
     @media (min-width: 768px) {
       .opening__grid {
         grid-template-columns: 1fr auto;
@@ -124,6 +153,7 @@
         <a href="menu.html">Bar Kort</a>
         <a href="about.html">Om Os</a>
         <a href="events.html">Events</a>
+        <a href="aabningstider.html">Åbningstider</a>
       </div>
 
       <button class="nav__hamburger" id="hamburger" aria-label="Menu">
@@ -139,6 +169,7 @@
     <a href="menu.html">Bar Kort</a>
     <a href="about.html">Om Os</a>
     <a href="events.html">Events</a>
+    <a href="aabningstider.html">Åbningstider</a>
   </div>
 
   <!-- Hero -->
@@ -195,9 +226,9 @@
           <p>Gode samtaler over en kop kaffe, en iskold fadøl, eller en velvalgt cocktail. Det er hele opskriften.</p>
           <a href="about.html" class="btn btn--outline" style="margin-top: var(--space-md);">Vores Historie</a>
         </div>
-        <div class="welcome__image" data-animate="fade-up">
-          <img src="billeder/baraekko.png" alt="Illustration af Bar Ækko's facade">
-        </div>
+        <a href="about.html" class="welcome__image welcome__image--photo" data-animate="fade-up" aria-label="Læs historien om Bar Ækko">
+          <img src="billeder/om-os-1.jpg" alt="Adam, Jacob og Jacob foran Bar Ækko på Vestergade 46" width="1800" height="1350" loading="lazy" decoding="async">
+        </a>
       </div>
     </div>
   </section>
@@ -205,7 +236,7 @@
   <!-- Highlights -->
   <section class="highlights">
     <div class="container">
-      <h2 class="highlights__heading" data-animate="fade-up">Det vi laver, laver vi godt.</h2>
+      <h2 class="highlights__heading" data-animate="fade-up">Kom for kaffen.<br>Bliv for fadøllen.</h2>
       <div class="highlights__grid" data-animate="stagger-children">
 
         <div class="highlight-card">
@@ -230,25 +261,12 @@
     </div>
   </section>
 
-  <!-- Opening Hours -->
+  <!-- Find os -->
   <section class="hours-band">
     <div class="container" data-animate="fade-up">
       <h2>Find os.<br>Når du har lyst.</h2>
-      <div class="hours-band__grid">
-        <div class="hours-band__item">
-          <span class="hours-band__days">Mandag-Torsdag</span>
-          <span class="hours-band__time">10:00-22:00</span>
-        </div>
-        <div class="hours-band__item">
-          <span class="hours-band__days">Fredag-Lørdag</span>
-          <span class="hours-band__time">10:00-00:00</span>
-        </div>
-        <div class="hours-band__item">
-          <span class="hours-band__days">Søndag</span>
-          <span class="hours-band__time">10:00-22:00</span>
-        </div>
-      </div>
-      <p class="hours-band__address">Vestergade 46 St. h · 8000 Aarhus C</p>
+      <p class="hours-band__address" style="margin-top: var(--space-md);">Vestergade 46 St. h · 8000 Aarhus C</p>
+      <a href="aabningstider.html" class="btn btn--light" style="margin-top: var(--space-md);">Se åbningstider</a>
     </div>
   </section>
 
@@ -280,7 +298,7 @@
           <p class="footer__text">
             Vestergade 46 St. h<br>
             8000 Aarhus C<br><br>
-            kontakt@baraekko.dk<br>
+            <a href="mailto:kontakt@baraekko.dk">kontakt@baraekko.dk</a><br>
             +45 XX XX XX XX
           </p>
         </div>
@@ -291,6 +309,7 @@
             <a href="menu.html">Bar Kort</a>
             <a href="about.html">Om Os</a>
             <a href="events.html">Events</a>
+            <a href="aabningstider.html">Åbningstider</a>
           </div>
         </div>
 
@@ -315,7 +334,7 @@
         <div>
           <h3 class="footer__heading">Kontakt</h3>
           <p class="footer__text">
-            kontakt@baraekko.dk<br>
+            <a href="mailto:kontakt@baraekko.dk">kontakt@baraekko.dk</a><br>
             +45 XX XX XX XX
           </p>
         </div>

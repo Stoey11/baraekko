@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Åbningstider for Bar Ækko på Vestergade 46 i Aarhus C. Vi åbner fredag den 21. august klokken 10.">
+  <title>Åbningstider · Bar Ækko</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .hours-page {
+      padding: var(--space-xl) 0 var(--space-2xl);
+      background-color: var(--clr-bg);
+    }
+
+    .hours-page__note {
+      margin-top: var(--space-lg);
+      color: var(--clr-ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      max-width: 50ch;
+    }
+
+    .hours-page .hours-band {
+      background-color: transparent;
+      color: var(--clr-ink);
+      padding: 0;
+    }
+
+    .hours-page .hours-band h2 {
+      color: var(--clr-ink);
+    }
+
+    .hours-page .hours-band__item {
+      border-top-color: var(--clr-line);
+    }
+
+    .hours-page .hours-band__item:last-child {
+      border-bottom-color: var(--clr-line);
+    }
+
+    .hours-page .hours-band__days,
+    .hours-page .hours-band__time {
+      color: var(--clr-ink);
+    }
+
+    .hours-page .hours-band__time {
+      opacity: 1;
+      color: var(--clr-ink-soft);
+    }
+
+    .hours-page .hours-band__address {
+      color: var(--clr-ink-soft);
+      opacity: 1;
+    }
+
+    .hours-page__visit {
+      margin-top: var(--space-lg);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/favicon.png" alt="" class="nav__logo-img">
+        <span>Bar Ækko</span>
+      </a>
+      <div class="nav__links">
+        <a href="menu.html">Bar Kort</a>
+        <a href="about.html">Om Os</a>
+        <a href="events.html">Events</a>
+        <a href="aabningstider.html" class="active">Åbningstider</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="menu.html">Bar Kort</a>
+    <a href="about.html">Om Os</a>
+    <a href="events.html">Events</a>
+    <a href="aabningstider.html">Åbningstider</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow">Vestergade 46</span>
+      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Åbningstider.</h1>
+      <p class="page-header__subtitle">Vi åbner fredag den 21. august klokken 10.</p>
+    </div>
+  </header>
+
+  <!-- Åbningstider -->
+  <section class="hours-page">
+    <div class="container">
+      <div class="hours-band" data-animate="fade-up">
+        <div class="hours-band__grid">
+          <div class="hours-band__item">
+            <span class="hours-band__days">Mandag-Torsdag</span>
+            <span class="hours-band__time">10:00-22:00</span>
+          </div>
+          <div class="hours-band__item">
+            <span class="hours-band__days">Fredag-Lørdag</span>
+            <span class="hours-band__time">10:00-00:00</span>
+          </div>
+          <div class="hours-band__item">
+            <span class="hours-band__days">Søndag</span>
+            <span class="hours-band__time">10:00-22:00</span>
+          </div>
+        </div>
+        <p class="hours-band__address">Vestergade 46 St. h · 8000 Aarhus C</p>
+      </div>
+
+      <p class="hours-page__note" data-animate="fade-up">Kaffe og morgenmad fra formiddagen, og øl, vin og drinks fra eftermiddagen. Holder vi ekstraordinært åbent eller lukket, skriver vi det på Instagram.</p>
+
+      <div class="hours-page__visit" data-animate="fade-up">
+        <a href="https://www.google.com/maps/search/?api=1&query=Vestergade+46,+8000+Aarhus+C" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Find vej</a>
+        <a href="menu.html" class="btn btn--outline">Se bar kort</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section">
+    <div class="map-section__inner">
+      <iframe
+        class="map-section__frame"
+        src="https://maps.google.com/maps?width=100%25&height=600&hl=da&q=Vestergade%2046,%208000%20Aarhus%20C&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Bar Ækko, Vestergade 46, Aarhus C"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand-row">
+        <img src="assets/favicon.png" alt="" class="footer__logo-img">
+        <div class="footer__brand">Bar Ækko</div>
+      </div>
+      <div class="footer__grid">
+        <div>
+          <h3 class="footer__heading">Besøg</h3>
+          <p class="footer__text">Vestergade 46 St. h<br>8000 Aarhus C<br><br><a href="mailto:kontakt@baraekko.dk">kontakt@baraekko.dk</a><br>+45 XX XX XX XX</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Sider</h3>
+          <div class="footer__links">
+            <a href="menu.html">Bar Kort</a>
+            <a href="about.html">Om Os</a>
+            <a href="events.html">Events</a>
+            <a href="aabningstider.html">Åbningstider</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Følg</h3>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Kontakt</h3>
+          <p class="footer__text"><a href="mailto:kontakt@baraekko.dk">kontakt@baraekko.dk</a><br>+45 XX XX XX XX</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Bar Ækko. Alle rettigheder forbeholdes.</p>
+        <p>Vestergade 46 · 8000 Aarhus C</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/scroll-animations.js"></script>
+</body>
+</html>

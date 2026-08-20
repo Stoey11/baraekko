@@ -346,6 +346,18 @@
   max-width: none;
 }
 
+.footer__text a {
+  color: var(--clr-bg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color var(--transition-fast);
+}
+
+.footer__text a:hover {
+  color: var(--clr-accent);
+}
+
 .footer__links a {
   display: block;
   color: var(--clr-bg);
