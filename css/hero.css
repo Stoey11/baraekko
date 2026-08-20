@@ -21,13 +21,19 @@
   -webkit-mask-image: none;
 }
 
-.hero__video {
+.hero__video,
+.hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 65% center;
   display: block;
   opacity: 0.65;
+}
+
+.hero__image {
+  object-position: center center;
+  opacity: 0.72;
 }
 
 @media (max-width: 767px) {

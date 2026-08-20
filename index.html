@@ -178,9 +178,19 @@
     }
 
     .social-card__media {
-      aspect-ratio: 1/1;
+      aspect-ratio: 4/3;
       overflow: hidden;
       background-color: var(--clr-bg-alt);
+    }
+
+    /* Plakaten er stående og må ikke beskæres */
+    .social-card--plakat .social-card__media {
+      aspect-ratio: 3/4;
+      background-color: var(--clr-bg);
+    }
+
+    .social-card--plakat .social-card__media img {
+      object-fit: contain;
     }
 
     .social-card__media img {
@@ -298,10 +308,14 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__video-container">
+      <img class="hero__image" src="billeder/vestergadefest-1.jpg" alt="Gæster ved langborde på Vestergade under Vestergade Fest" width="882" height="708" fetchpriority="high" decoding="async">
+
+      <!-- ØL-VIDEOEN: fjern denne kommentar og slet img-linjen ovenfor for at bytte tilbage
       <video class="hero__video" autoplay muted playsinline loop>
         <source src="assets/beer-pour.webm" type="video/webm">
         <source src="assets/beer-pour.mp4" type="video/mp4">
       </video>
+      -->
     </div>
 
     <div class="hero__content">
@@ -395,7 +409,7 @@
       </div>
       <div class="social__grid" data-animate="stagger-children">
 
-        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card" data-until="2026-08-24T06:00">
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card social-card--plakat" data-until="2026-08-24T06:00">
           <div class="social-card__media">
             <img src="billeder/aabningsdag.png" alt="Plakat: Bar Ækko åbner på fredag" width="642" height="799" loading="lazy" decoding="async">
           </div>
@@ -417,7 +431,7 @@
 
         <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
           <div class="social-card__media">
-            <img src="billeder/om-os-2.jpg" alt="Adam, Jacob og Jacob inde i baren" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="billeder/om-os-3.jpg" alt="Adam, Jacob og Jacob ved fadølshanen" width="642" height="492" loading="lazy" decoding="async">
           </div>
           <div class="social-card__body">
             <p class="social-card__text">Adam, Jacob og Jacob. Tre venner, en sommer med værktøj og en bar bygget op fra bunden.</p>
