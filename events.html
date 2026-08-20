@@ -100,6 +100,55 @@
       align-self: start;
     }
 
+    /* Generalprøven */
+    .rehearsal {
+      padding: var(--space-xl) 0;
+      background-color: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-line);
+    }
+
+    .rehearsal__heading {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      max-width: 16ch;
+      line-height: 0.95;
+      margin-top: var(--space-sm);
+    }
+
+    .rehearsal__text {
+      margin-top: var(--space-md);
+      color: var(--clr-ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      max-width: 60ch;
+    }
+
+    .rehearsal__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .rehearsal__figure {
+      margin: 0;
+    }
+
+    .rehearsal__figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background-color: var(--clr-bg);
+      border: 1px solid var(--clr-line);
+    }
+
+    .rehearsal__figure figcaption {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
     /* Recurring */
     .recurring {
       padding: var(--space-xl) 0;
@@ -240,6 +289,11 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--space-xl);
       }
+
+      .rehearsal__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+      }
     }
   </style>
 </head>
@@ -296,6 +350,26 @@
           <span class="event-row__tag">Åbning</span>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Generalprøven -->
+  <section class="rehearsal">
+    <div class="container">
+      <span class="eyebrow" data-animate="fade-up">Vestergade Fest · 30. maj</span>
+      <h2 class="rehearsal__heading" data-animate="fade-up">Vores første uofficielle åbningsdag.</h2>
+      <p class="rehearsal__text" data-animate="fade-up">Midt i ombygningen kom Vestergade Fest. Vi havde hverken gulv eller færdig bar, men vi stillede langborde ud på fortovet, hængte lys op og åbnede alligevel. Gaden blev fyldt, og vi fik en dag til at mærke, hvordan det ville være. Resten af sommeren gik med at gøre det klar for alvor.</p>
+
+      <div class="rehearsal__grid" data-animate="stagger-children">
+        <figure class="rehearsal__figure">
+          <img src="billeder/vestergadefest-1.jpg" alt="Langborde fyldt med gæster på Vestergade set oppefra" width="642" height="516" loading="lazy" decoding="async">
+          <figcaption>Langbordene på fortovet</figcaption>
+        </figure>
+        <figure class="rehearsal__figure">
+          <img src="billeder/vestergadefest-2.jpg" alt="Gæster foran facaden på Vestergade 46 med kulørte lys" width="642" height="493" loading="lazy" decoding="async">
+          <figcaption>Foran nummer 46, med ÅBNER SNART i ruden</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -372,5 +446,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="js/main.js?v=2"></script>
   <script src="js/scroll-animations.js?v=2"></script>
+  <script src="js/udloeb.js?v=2"></script>
 </body>
 </html>

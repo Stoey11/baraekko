@@ -346,6 +346,11 @@
   max-width: none;
 }
 
+/* Indhold med udløbsdato skal kunne skjules, uanset hvilket display det har */
+[hidden] {
+  display: none !important;
+}
+
 /* ===== ÅBEN/LUKKET-STATUS ===== */
 .status-strip {
   background-color: var(--clr-ink);
