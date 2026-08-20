@@ -109,6 +109,61 @@
       object-position: center 30%;
     }
 
+    .numbers {
+      padding: var(--space-xl) 0;
+      background-color: var(--clr-ink);
+      color: var(--clr-bg);
+    }
+
+    .numbers__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: var(--clr-bg);
+      max-width: 18ch;
+      line-height: 0.95;
+      margin-bottom: var(--space-lg);
+    }
+
+    .numbers__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+    }
+
+    .number-card {
+      border-top: 1.5px solid rgba(255, 255, 255, 0.28);
+      padding-top: var(--space-sm);
+    }
+
+    .number-card__value {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--clr-bg);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .number-card__label {
+      display: block;
+      margin-top: var(--space-xs);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+    }
+
+    .number-card__text {
+      margin-top: var(--space-xs);
+      font-size: var(--fs-small);
+      color: var(--clr-bg);
+      opacity: 0.7;
+      max-width: 24ch;
+      line-height: 1.5;
+    }
+
     .founders {
       padding: var(--space-xl) 0;
       background-color: var(--clr-bg-alt);
@@ -233,6 +288,11 @@
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-md);
       }
+
+      .numbers__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg) var(--space-md);
+      }
     }
   </style>
 </head>
@@ -295,6 +355,52 @@
         <figcaption class="about-photo__caption">Fra venstre: Adam, Jacob Drejer og Jacob Balle.</figcaption>
       </figure>
       <p class="about-press" data-animate="fade-up">Omtalt i Århus Stiftstidende og Mig og Aarhus, august 2026.</p>
+    </div>
+  </section>
+
+  <!-- Tal -->
+  <section class="numbers">
+    <div class="container">
+      <h2 class="numbers__heading" data-animate="fade-up">Ombygningen i tal.</h2>
+      <div class="numbers__grid" data-animate="stagger-children">
+
+        <div class="number-card">
+          <span class="number-card__value" data-count="3">3</span>
+          <span class="number-card__label">Venner</span>
+          <p class="number-card__text">Fra Skanderborg, Ry og Silkeborg.</p>
+        </div>
+
+        <div class="number-card">
+          <span class="number-card__value" data-count="1">1</span>
+          <span class="number-card__label">År med papir for ruden</span>
+          <p class="number-card__text">Så længe stod lokalet tomt, før vi ringede.</p>
+        </div>
+
+        <div class="number-card">
+          <span class="number-card__value" data-count="3">3</span>
+          <span class="number-card__label">Måneders ombygning</span>
+          <p class="number-card__text">Vi havde sat én af. Gulvet sagde noget andet.</p>
+        </div>
+
+        <div class="number-card">
+          <span class="number-card__value" data-count="40">40</span>
+          <span class="number-card__label">Venner med værktøj</span>
+          <p class="number-card__text">Ingen af dem fik løn. Alle fik mad.</p>
+        </div>
+
+        <div class="number-card">
+          <span class="number-card__value" data-count="7">7</span>
+          <span class="number-card__label">Eksamener undervejs</span>
+          <p class="number-card__text">Læst på skift, mens de andre borede.</p>
+        </div>
+
+        <div class="number-card">
+          <span class="number-card__value" data-count="80">80</span>
+          <span class="number-card__label">Pladser i alt</span>
+          <p class="number-card__text">50 indenfor og 30 på fortovet.</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -421,5 +527,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/scroll-animations.js"></script>
+  <script src="js/numbers.js"></script>
 </body>
 </html>

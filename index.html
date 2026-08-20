@@ -97,6 +97,125 @@
       height: auto;
     }
 
+    .marquee {
+      background-color: var(--clr-bg);
+      padding: var(--space-md) 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid var(--clr-line);
+      border-bottom: 1px solid var(--clr-line);
+    }
+
+    .marquee__track {
+      display: inline-flex;
+      gap: var(--space-md);
+      animation: marquee 38s linear infinite;
+    }
+
+    .marquee__item {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.25rem, 3vw, 2.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--clr-ink);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .marquee__item::after {
+      content: '✦';
+      color: var(--clr-accent);
+      font-size: 0.6em;
+      margin-left: var(--space-md);
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee__track {
+        animation: none;
+      }
+    }
+
+    .social {
+      padding: var(--space-xl) 0;
+      background-color: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-line);
+    }
+
+    .social__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .social__heading {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 0.95;
+      margin-top: var(--space-sm);
+      max-width: 14ch;
+    }
+
+    .social__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .social-card {
+      display: block;
+      background-color: var(--clr-bg);
+      border: 1px solid var(--clr-line);
+      overflow: hidden;
+    }
+
+    .social-card__media {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background-color: var(--clr-bg-alt);
+    }
+
+    .social-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform var(--transition-slow);
+    }
+
+    .social-card:hover .social-card__media img {
+      transform: scale(1.04);
+    }
+
+    .social-card__body {
+      padding: var(--space-sm) var(--space-sm) var(--space-md);
+    }
+
+    .social-card__text {
+      font-size: var(--fs-body);
+      color: var(--clr-ink-soft);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .social-card__meta {
+      display: block;
+      margin-top: var(--space-sm);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+    }
+
     .btn--light {
       border-color: var(--clr-bg);
       color: var(--clr-bg);
@@ -135,6 +254,10 @@
       .opening__poster {
         width: 340px;
         margin: 0;
+      }
+
+      .social__grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
@@ -198,6 +321,16 @@
     </div>
   </section>
 
+  <!-- Åben/lukket-status -->
+  <div class="status-strip" id="statusStrip" hidden>
+    <div class="container status-strip__inner">
+      <span class="status-strip__dot" aria-hidden="true"></span>
+      <span class="status-strip__state" id="statusState"></span>
+      <span class="status-strip__detail" id="statusDetail"></span>
+      <a href="aabningstider.html" class="status-strip__link">Se åbningstider</a>
+    </div>
+  </div>
+
   <!-- Åbningsbanner -->
   <section class="opening">
     <div class="container">
@@ -214,6 +347,22 @@
       </div>
     </div>
   </section>
+
+  <!-- Tekstbånd -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Åbner 21. august</span>
+      <span class="marquee__item">Vestergade 46</span>
+      <span class="marquee__item">Kaffe fra kl. 10</span>
+      <span class="marquee__item">Øl, vin &amp; drinks</span>
+      <span class="marquee__item">Aarhus C</span>
+      <span class="marquee__item">Åbner 21. august</span>
+      <span class="marquee__item">Vestergade 46</span>
+      <span class="marquee__item">Kaffe fra kl. 10</span>
+      <span class="marquee__item">Øl, vin &amp; drinks</span>
+      <span class="marquee__item">Aarhus C</span>
+    </div>
+  </div>
 
   <!-- Welcome -->
   <section class="welcome">
@@ -256,6 +405,52 @@
           <h3 class="highlight-card__title">Ude & Inde</h3>
           <p class="highlight-card__text">Nyd solen på vores udeservering eller find en hyggelig plads indenfor, året rundt.</p>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section class="social">
+    <div class="container">
+      <div class="social__head" data-animate="fade-up">
+        <div>
+          <span class="eyebrow">Følg med</span>
+          <h2 class="social__heading">Nyeste fra @baraekko.</h2>
+        </div>
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Følg os på Instagram</a>
+      </div>
+      <div class="social__grid" data-animate="stagger-children">
+
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
+          <div class="social-card__media">
+            <img src="billeder/aabningsdag.png" alt="Plakat: Bar Ækko åbner på fredag" width="642" height="799" loading="lazy" decoding="async">
+          </div>
+          <div class="social-card__body">
+            <p class="social-card__text">Vi åbner på fredag. Kig forbi fra klokken 10 og bliv, så længe du har lyst.</p>
+            <span class="social-card__meta">Åbningsdag</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
+          <div class="social-card__media">
+            <img src="billeder/om-os-2.jpg" alt="Adam, Jacob og Jacob inde i baren" width="1920" height="1080" loading="lazy" decoding="async">
+          </div>
+          <div class="social-card__body">
+            <p class="social-card__text">Adam, Jacob og Jacob. Tre venner, en sommer med værktøj og en bar bygget op fra bunden.</p>
+            <span class="social-card__meta">Folkene bag</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
+          <div class="social-card__media">
+            <img src="billeder/om-os-1.jpg" alt="De tre stiftere foran Bar Ækko på Vestergade 46" width="1800" height="1350" loading="lazy" decoding="async">
+          </div>
+          <div class="social-card__body">
+            <p class="social-card__text">Vestergade 46. Der er plads til 50 indenfor og 30 på fortovet, når solen står ned gennem gaden.</p>
+            <span class="social-card__meta">Vestergade 46</span>
+          </div>
+        </a>
 
       </div>
     </div>
@@ -354,5 +549,6 @@
   <script src="js/main.js"></script>
   <script src="js/hero-animation.js"></script>
   <script src="js/scroll-animations.js"></script>
+  <script src="js/status.js"></script>
 </body>
 </html>
