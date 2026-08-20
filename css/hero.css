@@ -349,46 +349,6 @@
   display: block;
 }
 
-/* ===== Marquee strip — bonus editorial flair ===== */
-.marquee {
-  background-color: var(--clr-bg);
-  padding: var(--space-md) 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 1px solid var(--clr-line);
-  border-bottom: 1px solid var(--clr-line);
-}
-
-.marquee__track {
-  display: inline-flex;
-  gap: var(--space-md);
-  animation: marquee 30s linear infinite;
-}
-
-.marquee__item {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: var(--clr-ink);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.marquee__item::after {
-  content: '✦';
-  color: var(--clr-accent);
-  font-size: 0.6em;
-  margin-left: var(--space-md);
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 /* ===== RESPONSIVE ===== */
 @media (min-width: 768px) {
   .welcome__grid {
