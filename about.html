@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Om Bar Ækko. Historien bag tre venner der skabte Aarhus' hyggeligste bar.">
+  <meta name="description" content="Historien om Bar Ækko på Vestergade 46 i Aarhus: et tomt lokale, et råddent gulv, tre venner og en sommer med værktøj.">
   <title>Om Os · Bar Ækko</title>
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -60,6 +60,62 @@
       font-size: clamp(1rem, 1.2vw, 1.125rem);
       color: var(--clr-ink-soft);
       max-width: 55ch;
+    }
+
+    .about-photo {
+      margin-top: var(--space-xl);
+      overflow: hidden;
+      background-color: var(--clr-bg-alt);
+    }
+
+    .about-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .about-photo__caption {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
+    .founders__intro {
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      color: var(--clr-ink-soft);
+      max-width: 55ch;
+      margin-top: calc(var(--space-lg) * -1 + var(--space-md));
+      margin-bottom: var(--space-lg);
+    }
+
+    .about-press {
+      margin-top: var(--space-md);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
+    .founders__photo {
+      margin-bottom: var(--space-lg);
+      overflow: hidden;
+      background-color: var(--clr-bg);
+    }
+
+    .founders__photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: center 30%;
     }
 
     .founders {
@@ -177,6 +233,10 @@
         gap: var(--space-xl);
       }
 
+      .about-photo img {
+        aspect-ratio: 16/10;
+      }
+
       .founders__grid,
       .values__grid {
         grid-template-columns: repeat(3, 1fr);
@@ -227,8 +287,8 @@
   <header class="page-header">
     <div class="container">
       <span class="eyebrow">Vores Historie</span>
-      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Tre venner.<br>Én drøm.</h1>
-      <p class="page-header__subtitle">Sådan blev Bar Ækko til.</p>
+      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Vi troede, vi skulle<br>male et par vægge.</h1>
+      <p class="page-header__subtitle">Så løftede vi det første gulvbræt.</p>
     </div>
   </header>
 
@@ -238,14 +298,22 @@
       <div class="about-story__grid">
         <div data-animate="fade-up">
           <span class="eyebrow">Begyndelsen</span>
-          <p class="about-story__lead" style="margin-top: var(--space-sm);">Det startede med en simpel idé.</p>
+          <p class="about-story__lead" style="margin-top: var(--space-sm);">Det begyndte med et tomt vindue.</p>
         </div>
         <div class="about-story__body" data-animate="fade-up">
-          <p>Bar Ækko udsprang af et venskab og en fælles passion for det gode selskab. Vi tre kammerater drømte længe om at åbne et sted, der ikke bare var endnu en bar, men et samlingspunkt. Et sted med sjæl, hvor mennesker naturligt finder sammen.</p>
-          <p>Vi tror på, at de bedste øjeblikke opstår over en god kop kaffe om formiddagen, en iskold fadøl efter arbejde, eller et glas vin til en lang snak med venner.</p>
-          <p>Med vores beliggenhed på Vestergade, lige i hjertet af Aarhus, inviterer vi dig ind i vores stue.</p>
+          <p>Vi gik forbi det hver weekend. Nummer 46, midt i Vestergade, med papir for ruden og ingenting bag den. Et helt år stod stedet og lavede ingenting, mens resten af gaden fyldtes op. På et tidspunkt begyndte vi at pege gennem støvet: baren derovre, køkkenet bagved, noget der ligner et klaver i hjørnet. Så ringede vi til lejeren, mest for at få ro i hovedet. Der var ingen plan for stedet. Nu var der.</p>
+          <p>1. maj fik vi nøglerne. Tre venner fra Skanderborg, Ry og Silkeborg, der havde mødt hinanden på studiet, og som havde regnet grundigt på alting undtagen det, der lå under gulvet.</p>
+          <p>Planen var en måned. Rydde op efter vandpibecaféen, der havde boet her, male, hænge lamper op, åbne til sommer. Den plan holdt, til vi løftede det første gulvbræt. Under det var træet råddent. Bag væggene skulle el og vvs laves om fra bunden. Vi kunne have lappet det og åbnet til tiden. I stedet rev vi det hele ned og byggede stedet op igen, så det stadig står om ti år. Det tog tre måneder. Og syv eksamener, som vi læste til på skift mellem to skruemaskiner.</p>
+          <p>Vi har aldrig stået alene i lokalet. Omkring 40 venner har været forbi med værktøj, en kok og et par håndværkere har lagt aftener i det, og naboerne i gaden er kommet ind for at spørge, hvordan det går, og gå igen med et telefonnummer, vi skulle bruge. Der er en del pizzaer i restance.</p>
+          <p>Tilbage står mørkt træ, stål og de rå mure, vi har banket fri i hånden. Plads til 50 indenfor og omkring 30 på fortovet, når solen står ned ad gaden. Den 21. august låser vi op. Så er det bare jer, der mangler.</p>
         </div>
       </div>
+
+      <figure class="about-photo" data-animate="fade-up">
+        <img src="billeder/om-os-1.jpg" alt="De tre stiftere af Bar Ækko foran lokalet på Vestergade 46" width="1800" height="1350" loading="lazy" decoding="async">
+        <figcaption class="about-photo__caption">Første gang i tre måneder, hvor alle tre stod stille.</figcaption>
+      </figure>
+      <p class="about-press" data-animate="fade-up">Omtalt i Århus Stiftstidende og Mig og Aarhus, august 2026.</p>
     </div>
   </section>
 
@@ -253,23 +321,29 @@
   <section class="founders">
     <div class="container">
       <h2 class="founders__heading" data-animate="fade-up">Folkene bag baren.</h2>
+      <p class="founders__intro" data-animate="fade-up">Vi mødte hinanden på studiet i Aarhus. To af os blev færdige med bacheloren midt i byggerodet. Den sidste mangler et år.</p>
+
+      <figure class="founders__photo" data-animate="fade-up">
+        <img src="billeder/om-os-2.jpg" alt="De tre stiftere af Bar Ækko inde i baren" width="1920" height="1080" loading="lazy" decoding="async">
+      </figure>
+
       <div class="founders__grid" data-animate="stagger-children">
 
         <div class="founder-card">
           <span class="founder-card__num">01</span>
-          <h3 class="founder-card__name">Jacob Riisberg Balle</h3>
+          <h3 class="founder-card__name">Adam Sørup Thomsen</h3>
           <div class="founder-card__role">Medstifter</div>
         </div>
 
         <div class="founder-card">
           <span class="founder-card__num">02</span>
-          <h3 class="founder-card__name">Jacob Drejer Mouritsen</h3>
+          <h3 class="founder-card__name">Jacob Riisberg Balle</h3>
           <div class="founder-card__role">Medstifter</div>
         </div>
 
         <div class="founder-card">
           <span class="founder-card__num">03</span>
-          <h3 class="founder-card__name">Adam Sørup Thomsen</h3>
+          <h3 class="founder-card__name">Jacob Drejer Mouritsen</h3>
           <div class="founder-card__role">Medstifter</div>
         </div>
 
@@ -280,25 +354,25 @@
   <!-- Values -->
   <section class="values">
     <div class="container">
-      <h2 class="values__heading" data-animate="fade-up">Hvad vi tror på.</h2>
+      <h2 class="values__heading" data-animate="fade-up">Sådan ser en dag ud.</h2>
       <div class="values__grid" data-animate="stagger-children">
 
         <div class="value-card">
-          <span class="value-card__num">01 / Fællesskab</span>
-          <h3 class="value-card__title">Mennesker først</h3>
-          <p class="value-card__text">Vi bygger bro mellem mennesker. Her mødes venner, naboer og fremmede over en god drink.</p>
+          <span class="value-card__num">01 / Formiddag</span>
+          <h3 class="value-card__title">Vi åbner klokken 10</h3>
+          <p class="value-card__text">Kaffe, en bolle med ost, en granolabowl, en toast. Tag computeren med, eller lad være. Ingen kommer og kigger på dit tomme glas.</p>
         </div>
 
         <div class="value-card">
-          <span class="value-card__num">02 / Kvalitet</span>
-          <h3 class="value-card__title">Ingen kompromis</h3>
-          <p class="value-card__text">Fra bønnerne i kaffen til øllen på fad. Vi går ikke på kompromis med smagen.</p>
+          <span class="value-card__num">02 / Eftermiddag</span>
+          <h3 class="value-card__title">Øl, vin og hjemmelavet</h3>
+          <p class="value-card__text">Fadøl fra Ebeltoft Gårdbryggeri og Carlsberg, tre røde og tre hvide på glas, og et par cocktails vi selv har fundet på, blandt andet vores egen limoncello. Oliven og chips står på bordet uden at koste ekstra.</p>
         </div>
 
         <div class="value-card">
-          <span class="value-card__num">03 / Hygge</span>
-          <h3 class="value-card__title">Den gode stemning</h3>
-          <p class="value-card__text">Den danske hygge er kernen i alt vi gør. Varm belysning, god musik og en afslappet stemning.</p>
+          <span class="value-card__num">03 / Aften</span>
+          <h3 class="value-card__title">Der skal være musik</h3>
+          <p class="value-card__text">Et klaver, en guitar, navne du kender og navne du snart gør. Vi har bygget stedet til at kunne tåle lyd, men aldrig så højt, at du ikke kan snakke over bordet.</p>
         </div>
 
       </div>
