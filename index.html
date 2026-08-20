@@ -183,25 +183,6 @@
       background-color: var(--clr-bg-alt);
     }
 
-    /* Det brede billede indefra må ikke beskæres i siderne */
-    .social-card--bred .social-card__media {
-      background-color: var(--clr-bg);
-    }
-
-    .social-card--bred .social-card__media img {
-      object-fit: contain;
-    }
-
-    /* Plakaten er stående og må ikke beskæres */
-    .social-card--plakat .social-card__media {
-      aspect-ratio: 3/4;
-      background-color: var(--clr-bg);
-    }
-
-    .social-card--plakat .social-card__media img {
-      object-fit: contain;
-    }
-
     .social-card__media img {
       width: 100%;
       height: 100%;
@@ -418,17 +399,7 @@
       </div>
       <div class="social__grid" data-animate="stagger-children">
 
-        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card social-card--plakat" data-until="2026-08-24T06:00">
-          <div class="social-card__media">
-            <img src="billeder/aabningsdag.png" alt="Plakat: Bar Ækko åbner på fredag" width="642" height="799" loading="lazy" decoding="async">
-          </div>
-          <div class="social-card__body">
-            <p class="social-card__text">Vi åbner på fredag. Kig forbi fra klokken 11 og bliv, så længe du har lyst.</p>
-            <span class="social-card__meta">Åbningsdag</span>
-          </div>
-        </a>
-
-        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card" data-from="2026-08-24T06:00" hidden>
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
           <div class="social-card__media">
             <img src="billeder/om-os-3.jpg" alt="Adam, Jacob og Jacob ved fadølshanen" width="642" height="492" loading="lazy" decoding="async">
           </div>
@@ -438,9 +409,9 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card social-card--bred">
+        <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
           <div class="social-card__media">
-            <img src="billeder/om-os-2.jpg" alt="Adam, Jacob og Jacob inde i baren foran murstensvæggen" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="billeder/om-os-2-4x3.jpg" alt="Adam, Jacob og Jacob inde i baren foran murstensvæggen" width="1440" height="1080" loading="lazy" decoding="async">
           </div>
           <div class="social-card__body">
             <p class="social-card__text">Adam, Jacob og Jacob inde i baren. Tre venner, en sommer med værktøj og et sted bygget op fra bunden.</p>
