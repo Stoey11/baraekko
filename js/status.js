@@ -6,10 +6,12 @@
   const stateEl = document.getElementById('statusState');
   const detailEl = document.getElementById('statusDetail');
 
-  // Åbningsdagen: fredag den 21. august 2026, kl. 10
-  const OPENING = { year: 2026, month: 7, day: 21, hour: 10 };
+  // Åbningsdagen: fredag den 21. august 2026, kl. 11
+  const OPENING = { year: 2026, month: 7, day: 21, hour: 11 };
 
-  // Åbningstider pr. ugedag (0 = søndag). [åbner, lukker] i hele timer.
+  // Almindelige åbningstider pr. ugedag (0 = søndag). [åbner, lukker] i hele timer.
+  // Lukketider over 24 betyder efter midnat, fx 26 = 02:00 natten efter.
+  // null betyder lukket.
   const HOURS = {
     0: [10, 22],
     1: [10, 22],
@@ -20,6 +22,13 @@
     6: [10, 24]
   };
 
+  // Undtagelser på bestemte datoer, fx åbningsweekenden
+  const SAERLIGE = {
+    '2026-08-21': [11, 26],
+    '2026-08-22': [11, 26],
+    '2026-08-23': null
+  };
+
   const DAGE = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'];
 
   // Dansk tid, uanset hvor gæsten sidder
@@ -27,8 +36,20 @@
     return new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Copenhagen' }));
   }
 
+  function datonoegle(d) {
+    return d.getFullYear() + '-' +
+      String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0');
+  }
+
+  function tiderFor(d) {
+    const noegle = datonoegle(d);
+    if (Object.prototype.hasOwnProperty.call(SAERLIGE, noegle)) return SAERLIGE[noegle];
+    return HOURS[d.getDay()];
+  }
+
   function klokken(timer) {
-    return timer >= 24 ? '00:00' : String(timer).padStart(2, '0') + ':00';
+    return String(timer % 24).padStart(2, '0') + ':00';
   }
 
   function nedtaelling(ms) {
@@ -42,6 +63,16 @@
     return rest + (rest === 1 ? ' minut' : ' minutter');
   }
 
+  // Første dag med åbent efter `d`
+  function naesteAabne(d) {
+    for (let i = 1; i <= 7; i++) {
+      const kandidat = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+      const tider = tiderFor(kandidat);
+      if (tider) return { dato: kandidat, om: i, tider: tider };
+    }
+    return null;
+  }
+
   function opdater() {
     const n = nu();
     const aabning = new Date(OPENING.year, OPENING.month, OPENING.day, OPENING.hour, 0, 0);
@@ -50,28 +81,41 @@
     if (n < aabning) {
       strip.dataset.state = 'countdown';
       stateEl.textContent = 'Vi åbner om ' + nedtaelling(aabning - n);
-      detailEl.textContent = 'Fredag den 21. august kl. 10';
+      detailEl.textContent = 'Fredag den 21. august kl. 11';
       strip.hidden = false;
       return;
     }
 
-    const dag = n.getDay();
     const minutter = n.getHours() * 60 + n.getMinutes();
-    const [aabner, lukker] = HOURS[dag];
 
-    if (minutter >= aabner * 60 && minutter < lukker * 60) {
+    // Kører gårsdagens åbningstid stadig, fordi vi lukkede efter midnat?
+    const igaar = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 1);
+    const tiderIgaar = tiderFor(igaar);
+    if (tiderIgaar && tiderIgaar[1] > 24 && minutter < (tiderIgaar[1] - 24) * 60) {
       strip.dataset.state = 'open';
       stateEl.textContent = 'Åbent nu';
-      detailEl.textContent = 'Vi lukker kl. ' + klokken(lukker);
-    } else if (minutter < aabner * 60) {
+      detailEl.textContent = 'Vi lukker kl. ' + klokken(tiderIgaar[1]);
+      strip.hidden = false;
+      return;
+    }
+
+    const idag = tiderFor(n);
+
+    if (idag && minutter >= idag[0] * 60 && minutter < Math.min(idag[1], 24) * 60) {
+      strip.dataset.state = 'open';
+      stateEl.textContent = 'Åbent nu';
+      detailEl.textContent = 'Vi lukker kl. ' + klokken(idag[1]);
+    } else if (idag && minutter < idag[0] * 60) {
       strip.dataset.state = 'closed';
       stateEl.textContent = 'Lukket lige nu';
-      detailEl.textContent = 'Vi åbner kl. ' + klokken(aabner);
+      detailEl.textContent = 'Vi åbner kl. ' + klokken(idag[0]);
     } else {
-      const imorgen = (dag + 1) % 7;
+      const naeste = naesteAabne(n);
       strip.dataset.state = 'closed';
       stateEl.textContent = 'Lukket lige nu';
-      detailEl.textContent = 'Vi åbner igen ' + DAGE[imorgen] + ' kl. ' + klokken(HOURS[imorgen][0]);
+      detailEl.textContent = naeste
+        ? 'Vi åbner ' + (naeste.om === 1 ? 'i morgen' : DAGE[naeste.dato.getDay()]) + ' kl. ' + klokken(naeste.tider[0])
+        : 'Se åbningstider';
     }
 
     strip.hidden = false;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Åbningstider for Bar Ækko på Vestergade 46 i Aarhus C. Vi åbner fredag den 21. august klokken 10.">
+  <meta name="description" content="Åbningstider for Bar Ækko på Vestergade 46 i Aarhus C. Vi åbner fredag den 21. august klokken 11.">
   <title>Åbningstider · Bar Ækko</title>
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -68,6 +68,49 @@
       opacity: 1;
     }
 
+    .hours-page__special {
+      margin-top: var(--space-lg);
+      padding: var(--space-md);
+      background-color: var(--clr-bg-alt);
+      border: 1px solid var(--clr-line);
+    }
+
+    .hours-page__special-label {
+      display: block;
+      margin-bottom: var(--space-sm);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+    }
+
+    .hours-page__special .hours-band__item {
+      border-top-color: var(--clr-line);
+    }
+
+    .hours-page__special .hours-band__item:last-child {
+      border-bottom-color: var(--clr-line);
+    }
+
+    .hours-page__special .hours-band__days,
+    .hours-page__special .hours-band__time {
+      color: var(--clr-ink);
+    }
+
+    .hours-page__special .hours-band__time {
+      opacity: 1;
+      color: var(--clr-ink-soft);
+    }
+
+    .hours-page__special-text {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-small);
+      color: var(--clr-ink-soft);
+      max-width: 55ch;
+      line-height: 1.6;
+    }
+
     .hours-page__visit {
       margin-top: var(--space-lg);
       display: flex;
@@ -109,7 +152,7 @@
     <div class="container">
       <span class="eyebrow">Vestergade 46</span>
       <h1 class="page-header__title" style="margin-top: var(--space-sm);">Åbningstider.</h1>
-      <p class="page-header__subtitle">Vi åbner fredag den 21. august klokken 10.</p>
+      <p class="page-header__subtitle">Vi åbner fredag den 21. august klokken 11.</p>
     </div>
   </header>
 
@@ -144,6 +187,25 @@
         <p class="hours-band__address">Vestergade 46 St. h · 8000 Aarhus C</p>
       </div>
 
+      <div class="hours-page__special" data-animate="fade-up">
+        <span class="hours-page__special-label">Åbningsweekenden</span>
+        <div class="hours-band__grid">
+          <div class="hours-band__item">
+            <span class="hours-band__days">Fredag 21. august</span>
+            <span class="hours-band__time">11:00-02:00</span>
+          </div>
+          <div class="hours-band__item">
+            <span class="hours-band__days">Lørdag 22. august</span>
+            <span class="hours-band__time">11:00-02:00</span>
+          </div>
+          <div class="hours-band__item">
+            <span class="hours-band__days">Søndag 23. august</span>
+            <span class="hours-band__time">Lukket</span>
+          </div>
+        </div>
+        <p class="hours-page__special-text">Vi holder længe åbent den første weekend og bruger søndagen på at rydde op. Fra mandag den 24. august gælder tiderne foroven.</p>
+      </div>
+
       <p class="hours-page__note" data-animate="fade-up">Kaffe og morgenmad fra formiddagen, og øl, vin og drinks fra eftermiddagen. Holder vi ekstraordinært åbent eller lukket, skriver vi det på Instagram.</p>
 
       <div class="hours-page__visit" data-animate="fade-up">
@@ -176,7 +238,7 @@
       <div class="footer__grid">
         <div>
           <h3 class="footer__heading">Besøg</h3>
-          <p class="footer__text">Vestergade 46 St. h<br>8000 Aarhus C<br><br><a href="mailto:kontakt@baraekko.dk">kontakt@baraekko.dk</a><br>+45 XX XX XX XX</p>
+          <p class="footer__text">Vestergade 46 St. h<br>8000 Aarhus C</p>
         </div>
         <div>
           <h3 class="footer__heading">Sider</h3>

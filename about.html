@@ -224,6 +224,86 @@
       line-height: 1.5;
     }
 
+    .journey {
+      padding: var(--space-xl) 0 var(--space-2xl);
+      background-color: var(--clr-bg);
+      border-top: 1px solid var(--clr-line);
+    }
+
+    .journey__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      max-width: 18ch;
+      line-height: 0.95;
+      margin-bottom: var(--space-sm);
+    }
+
+    .journey__intro {
+      color: var(--clr-ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      max-width: 55ch;
+      margin-bottom: var(--space-xl);
+    }
+
+    .journey__step {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      align-items: center;
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--clr-line);
+    }
+
+    .journey__step:last-child {
+      border-bottom: 1px solid var(--clr-line);
+    }
+
+    .journey__media {
+      overflow: hidden;
+      background-color: var(--clr-bg-alt);
+      aspect-ratio: 4/3;
+    }
+
+    .journey__step--staaende .journey__media {
+      aspect-ratio: 3/4;
+    }
+
+    .journey__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      will-change: transform;
+      transform: scale(1.12);
+    }
+
+    .journey__num {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--clr-accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .journey__text {
+      margin-top: var(--space-sm);
+      font-size: clamp(1.0625rem, 1.5vw, 1.375rem);
+      color: var(--clr-ink);
+      max-width: 34ch;
+      line-height: 1.4;
+    }
+
+    .journey__phase {
+      display: block;
+      margin-top: var(--space-sm);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
     .values {
       padding: var(--space-xl) 0;
       background-color: var(--clr-bg);
@@ -292,6 +372,20 @@
       .numbers__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-lg) var(--space-md);
+      }
+
+      .journey__step {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+        padding: var(--space-xl) 0;
+      }
+
+      .journey__step:nth-child(even) .journey__media {
+        order: 2;
+      }
+
+      .journey__step--staaende .journey__media {
+        max-width: 480px;
       }
     }
   </style>
@@ -447,7 +541,7 @@
         <div class="value-card">
           <span class="value-card__num">01 / Formiddag</span>
           <h3 class="value-card__title">Vi åbner klokken 10</h3>
-          <p class="value-card__text">Kaffe, en bolle med ost, en granolabowl, en toast. Tag computeren med, eller lad være. Ingen kommer og kigger på dit tomme glas.</p>
+          <p class="value-card__text">Kaffe, en bolle med ost, en granolabowl, en toast. Tag computeren med, eller lad være. Her er god tid til at sidde længe.</p>
         </div>
 
         <div class="value-card">
@@ -463,6 +557,158 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- Renoveringsrejsen -->
+  <section class="journey">
+    <div class="container">
+      <h2 class="journey__heading" data-animate="fade-up">Renoveringsrejsen.</h2>
+      <p class="journey__intro" data-animate="fade-up">Fra vandpibecafé til bar, fotograferet undervejs af os selv. Det meste af det her troede vi ikke, vi skulle lave.</p>
+
+      <div class="journey__step" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-01.jpg" alt="Det gamle lokale med sorte vægge og efterladt inventar" width="1600" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">01</span>
+          <p class="journey__text">Sådan så der ud, da vi fik nøglerne. Vandpibecaféen havde malet det meste sort.</p>
+          <span class="journey__phase">1. maj</span>
+        </div>
+      </div>
+
+      <div class="journey__step" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-02.jpg" alt="Bagerste rum med mørkerød væg og bar puds" width="1600" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">02</span>
+          <p class="journey__text">Det bagerste rum. Mørkerød væg, gammel puds og ellers ingenting.</p>
+          <span class="journey__phase">Før</span>
+        </div>
+      </div>
+
+      <div class="journey__step" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-03.jpg" alt="Kælderen fyldt med gamle sofaer og fjernsyn" width="1600" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">03</span>
+          <p class="journey__text">Kælderen stod fuld af sofaer og fjernsyn fra det gamle sted.</p>
+          <span class="journey__phase">Før</span>
+        </div>
+      </div>
+
+      <div class="journey__step" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-04.jpg" alt="Kig ned ad trappen mod det tømte forlokale" width="1600" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">04</span>
+          <p class="journey__text">De første dage gik med at bære ud. Vi troede stadig, det handlede om maling.</p>
+          <span class="journey__phase">Nedrivning</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-05.jpg" alt="Gulvbrædder brækkes op og afslører råddent træ" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">05</span>
+          <p class="journey__text">Så løftede vi det første gulvbræt. Træet nedenunder var råddent.</p>
+          <span class="journey__phase">Nedrivning</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-06.jpg" alt="Hele gulvet er fjernet og bjælkelaget ligger frit" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">06</span>
+          <p class="journey__text">Så tog vi hele gulvet. På et tidspunkt var der ikke noget at stå på.</p>
+          <span class="journey__phase">Nedrivning</span>
+        </div>
+      </div>
+
+      <div class="journey__step" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-07.jpg" alt="Kælderen strippet ned til mursten og bjælker" width="1600" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">07</span>
+          <p class="journey__text">Da alt var revet ned, kunne vi se murene og bjælkerne, huset er bygget af.</p>
+          <span class="journey__phase">Bunden nået</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-08.jpg" alt="Nye trækonstruktioner sættes op ved vinduerne" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">08</span>
+          <p class="journey__text">Nyt tømmer ind ad døren. Herfra gik det den rigtige vej.</p>
+          <span class="journey__phase">Opbygning</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-09.jpg" alt="Det nye bjælkelag set oppefra" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">09</span>
+          <p class="journey__text">Gulvet tegnet op på ny, bjælke for bjælke.</p>
+          <span class="journey__phase">Opbygning</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-10.jpg" alt="Plader lægges ud over det nye bjælkelag" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">10</span>
+          <p class="journey__text">Plader over bjælkerne. Første gang man kunne gå tværs gennem lokalet igen.</p>
+          <span class="journey__phase">Opbygning</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-11.jpg" alt="Nypudsede vægge og åbning ned til kældertrappen" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">11</span>
+          <p class="journey__text">Vægge pudset op, og hullet ned til kælderen fik en trappe.</p>
+          <span class="journey__phase">Færdiggørelse</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-12.jpg" alt="Nyt trægulv lagt op mod den fritlagte murstensvæg" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">12</span>
+          <p class="journey__text">Nyt trægulv, og de mursten vi bankede fri, fik lov at blive stående.</p>
+          <span class="journey__phase">Færdiggørelse</span>
+        </div>
+      </div>
+
+      <div class="journey__step journey__step--staaende" data-animate="fade-up">
+        <div class="journey__media" data-parallax>
+          <img src="billeder/ombygning/ombygning-13.jpg" alt="Baren er rejst og de sidste gulvbrædder lægges" width="1600" height="2134" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="journey__num">13</span>
+          <p class="journey__text">Baren rejst og de sidste brædder lagt. Så manglede der bare gæster.</p>
+          <span class="journey__phase">August</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -489,7 +735,7 @@
       <div class="footer__grid">
         <div>
           <h3 class="footer__heading">Besøg</h3>
-          <p class="footer__text">Vestergade 46 St. h<br>8000 Aarhus C<br><br><a href="mailto:kontakt@baraekko.dk">kontakt@baraekko.dk</a><br>+45 XX XX XX XX</p>
+          <p class="footer__text">Vestergade 46 St. h<br>8000 Aarhus C</p>
         </div>
         <div>
           <h3 class="footer__heading">Sider</h3>
@@ -528,5 +774,6 @@
   <script src="js/main.js?v=2"></script>
   <script src="js/scroll-animations.js?v=2"></script>
   <script src="js/numbers.js?v=2"></script>
+  <script src="js/parallax.js?v=2"></script>
 </body>
 </html>
