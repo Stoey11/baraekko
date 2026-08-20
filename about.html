@@ -53,6 +53,49 @@
       max-width: 55ch;
     }
 
+    .about-story__aside {
+      margin: var(--space-lg) 0 0;
+      max-width: 520px;
+    }
+
+    .collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xs);
+    }
+
+    .collage__item {
+      overflow: hidden;
+      background-color: var(--clr-bg-alt);
+      aspect-ratio: 1/1;
+    }
+
+    .collage__item--bred {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/10;
+    }
+
+    .collage__item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .collage__item:hover img {
+      transform: scale(1.03);
+    }
+
+    .about-story__aside figcaption {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
     .about-photo {
       margin-top: var(--space-xl);
       overflow: hidden;
@@ -456,6 +499,21 @@
         <div data-animate="fade-up">
           <span class="eyebrow">Begyndelsen</span>
           <p class="about-story__lead" style="margin-top: var(--space-sm);">Vi kunne ikke slippe det tomme lokale.</p>
+
+          <figure class="about-story__aside">
+            <div class="collage">
+              <div class="collage__item collage__item--bred">
+                <img src="billeder/ombygning/ombygning-02.jpg" alt="Det tomme bagerste rum med mørkerød væg, før ombygningen" width="1600" height="1200" loading="lazy" decoding="async">
+              </div>
+              <div class="collage__item">
+                <img src="billeder/ombygning/ombygning-05.jpg" alt="Gulvbrædder brækkes op og afslører råddent træ" width="1600" height="2134" loading="lazy" decoding="async">
+              </div>
+              <div class="collage__item">
+                <img src="billeder/ombygning/ombygning-12.jpg" alt="Det færdige trægulv op mod den fritlagte murstensvæg" width="1600" height="2134" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption>Tomt lokale, råddent gulv, nyt trægulv. Hele rejsen længere nede</figcaption>
+          </figure>
         </div>
         <div class="about-story__body" data-animate="fade-up">
           <p>Vi hedder Adam, Jacob og Jacob, og vi gik forbi nummer 46 stort set hver weekend. Der var papir for ruden, og der skete ingenting bag den. Sådan stod det i et helt år, mens resten af gaden summede. På et tidspunkt begyndte vi at stå og pege ind gennem støvet: baren derovre, køkkenet bagved, et klaver i hjørnet. Til sidst ringede vi til lejeren, mest for at få det ud af hovedet. Der var ingen plan for stedet. Så lavede vi en.</p>
