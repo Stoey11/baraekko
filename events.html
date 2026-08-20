@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Events hos Bar Ækko. Live musik, barspil og hygge i Aarhus.">
+  <meta name="description" content="Bar Ækko åbner fredag den 21. august klokken 10 på Vestergade 46 i Aarhus. Flere events er på vej.">
   <title>Events · Bar Ækko</title>
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -128,6 +128,27 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--space-lg);
+    }
+
+    .recurring__text {
+      color: var(--clr-bg);
+      opacity: 0.8;
+      max-width: 55ch;
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      line-height: 1.6;
+      margin-top: calc(var(--space-lg) * -1 + var(--space-md));
+      margin-bottom: var(--space-md);
+    }
+
+    .btn--light {
+      border-color: var(--clr-bg);
+      color: var(--clr-bg);
+      background-color: transparent;
+    }
+
+    .btn--light:hover {
+      background-color: var(--clr-bg);
+      color: var(--clr-ink);
     }
 
     .recurring-card {
@@ -260,56 +281,26 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
-      <span class="eyebrow">Hvad sker der</span>
-      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Events.</h1>
-      <p class="page-header__subtitle">Der sker altid noget hos Bar Ækko.</p>
+      <span class="eyebrow">Fredag den 21. august</span>
+      <h1 class="page-header__title" style="margin-top: var(--space-sm);">Vi åbner<br>på fredag.</h1>
+      <p class="page-header__subtitle">Klokken 10 låser vi op, og så holder vi åbent til sent. Kig forbi.</p>
     </div>
   </header>
 
   <!-- Upcoming Events -->
   <section class="upcoming">
     <div class="container">
-      <h2 class="upcoming__heading" data-animate="fade-up">Kommende events.</h2>
+      <h2 class="upcoming__heading" data-animate="fade-up">Først på programmet.</h2>
       <div class="upcoming__grid" data-animate="stagger-children">
 
         <div class="event-row">
-          <div class="event-row__date">18 Apr</div>
+          <div class="event-row__date">21 Aug</div>
           <div>
-            <div class="event-row__title">Fredag Live Musik</div>
-            <p class="event-row__desc" style="margin-top: var(--space-xs);">Akustisk livemusik med lokale kunstnere. Kom og nyd en drink mens du lytter til gode toner.</p>
+            <div class="event-row__title">Åbningsdag</div>
+            <p class="event-row__desc" style="margin-top: var(--space-xs);">Vi låser op for første gang. Kaffe og morgenmad fra formiddagen, og øl, vin og drinks resten af dagen. Ingen tilmelding, du skal bare komme.</p>
           </div>
-          <div class="event-row__time">20:00 til 23:00</div>
-          <span class="event-row__tag">Live Musik</span>
-        </div>
-
-        <div class="event-row">
-          <div class="event-row__date">20 Apr</div>
-          <div>
-            <div class="event-row__title">Søndag Barspil</div>
-            <p class="event-row__desc" style="margin-top: var(--space-xs);">Tag vennerne med til en hyggelig søndag med terningespil, bækker og andre klassiske barspil.</p>
-          </div>
-          <div class="event-row__time">16:00 til 21:00</div>
-          <span class="event-row__tag">Barspil</span>
-        </div>
-
-        <div class="event-row">
-          <div class="event-row__date">24 Apr</div>
-          <div>
-            <div class="event-row__title">Vinsmagning</div>
-            <p class="event-row__desc" style="margin-top: var(--space-xs);">Smag dig igennem 5 udvalgte vine fra Sydeuropa. Inkluderer oliven og ost. Begrænset antal pladser.</p>
-          </div>
-          <div class="event-row__time">18:00 til 20:00</div>
-          <span class="event-row__tag">Smagning</span>
-        </div>
-
-        <div class="event-row">
-          <div class="event-row__date">25 Apr</div>
-          <div>
-            <div class="event-row__title">DJ Night</div>
-            <p class="event-row__desc" style="margin-top: var(--space-xs);">Fredag aften med DJ der spiller funk, soul og disco. Dans, drik og hav en fantastisk aften.</p>
-          </div>
-          <div class="event-row__time">21:00 til 00:00</div>
-          <span class="event-row__tag">Live Musik</span>
+          <div class="event-row__time">10:00 til sent</div>
+          <span class="event-row__tag">Åbning</span>
         </div>
 
       </div>
@@ -319,31 +310,9 @@
   <!-- Recurring -->
   <section class="recurring">
     <div class="container">
-      <h2 class="recurring__heading" data-animate="fade-up">Faste events.</h2>
-      <div class="recurring__grid" data-animate="stagger-children">
-
-        <div class="recurring-card">
-          <span class="recurring-card__num">01</span>
-          <h3 class="recurring-card__title">Barspil Søndag</h3>
-          <div class="recurring-card__day">Hver søndag, 16:00</div>
-          <p class="recurring-card__desc">Terninger, bækker og klassiske barspil. Kom og udfordr vennerne.</p>
-        </div>
-
-        <div class="recurring-card">
-          <span class="recurring-card__num">02</span>
-          <h3 class="recurring-card__title">Fredags Live</h3>
-          <div class="recurring-card__day">Hver fredag, 20:00</div>
-          <p class="recurring-card__desc">Akustisk livemusik med skiftende kunstnere fra Aarhus-scenen.</p>
-        </div>
-
-        <div class="recurring-card">
-          <span class="recurring-card__num">03</span>
-          <h3 class="recurring-card__title">Torsdag Vinsmagning</h3>
-          <div class="recurring-card__day">Sidste torsdag i måneden</div>
-          <p class="recurring-card__desc">Tematisk vinsmagning med snacks. Skriv til os for at sikre din plads.</p>
-        </div>
-
-      </div>
+      <h2 class="recurring__heading" data-animate="fade-up">Flere events er på vej.</h2>
+      <p class="recurring__text" data-animate="fade-up">Vi har store planer for livemusik og et par andre ting, vi ikke helt tør love endnu. Så snart datoerne er på plads, lægger vi dem her på siden. Vil du høre det først, så følg med på Instagram.</p>
+      <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="btn btn--light" data-animate="fade-up">Følg @baraekko</a>
     </div>
   </section>
 
@@ -356,7 +325,7 @@
           <h2 class="private__heading" style="margin-top: var(--space-sm);">Hold dit event hos os.</h2>
         </div>
         <div>
-          <p class="private__text">Fødselsdag, firmafest eller bare en god aften med vennerne? Vi skaber rammerne, du fylder dem med liv. Skriv til os på <strong>kontakt@baraekko.dk</strong> for en uforpligtende snak.</p>
+          <p class="private__text">Fødselsdag, firmafest eller bare en god aften med vennerne? Vi har plads til 50 indenfor og 30 på fortovet. Skriv til os på <strong>kontakt@baraekko.dk</strong>, så finder vi ud af det.</p>
         </div>
       </div>
     </div>
