@@ -271,15 +271,16 @@
       object-fit: cover;
     }
 
-    /* Hold skiltet og gæsterne i billedet, når hero'en beskæres */
+    /* Hero-udsnittet er beskåret til gæsterne og gaden, så billedet
+       kan stå lysere og centreret uden at miste skiltet */
     .hero__image {
-      object-position: center 58%;
+      object-position: center center;
+      opacity: 0.82;
     }
 
-    @media (max-width: 767px) {
-      .hero__image {
-        object-position: 58% 55%;
-      }
+    /* Mørkere bund, så overskriften holder på de lyse brosten */
+    .hero::after {
+      background: linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.06) 35%, rgba(0,0,0,0.68) 100%);
     }
 
     .street__caption {
@@ -354,7 +355,10 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__video-container">
-      <img class="hero__image" src="billeder/facade.jpg" alt="Fyldte langborde på fortovet foran Bar Ækko på Vestergade 46" width="1800" height="1350" fetchpriority="high" decoding="async">
+      <picture>
+        <source media="(max-width: 767px)" srcset="billeder/facade-hero-mobil.jpg">
+        <img class="hero__image" src="billeder/facade-hero.jpg" alt="Fyldte langborde på fortovet foran Bar Ækko på Vestergade 46" width="1800" height="1296" fetchpriority="high" decoding="async">
+      </picture>
 
       <!-- ØL-VIDEOEN: fjern denne kommentar og slet img-linjen ovenfor for at bytte tilbage
       <video class="hero__video" autoplay muted playsinline loop>
