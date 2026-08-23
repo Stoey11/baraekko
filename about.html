@@ -369,6 +369,63 @@
       color: var(--clr-ink-soft);
     }
 
+    .today {
+      padding: var(--space-xl) 0;
+      background-color: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-line);
+    }
+
+    .today__heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+      max-width: 16ch;
+    }
+
+    .today__intro {
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-lg);
+      font-size: var(--fs-body);
+      color: var(--clr-ink-soft);
+      max-width: 46ch;
+      line-height: 1.6;
+    }
+
+    .today__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .today__item--bred {
+      grid-column: 1 / -1;
+    }
+
+    .today__item--bred img {
+      aspect-ratio: 4/3;
+      object-position: center 62%;
+    }
+
+    .today__item {
+      margin: 0;
+    }
+
+    .today__item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background-color: var(--clr-bg);
+    }
+
+    .today__item figcaption {
+      margin-top: var(--space-xs);
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
     .values {
       padding: var(--space-xl) 0;
       background-color: var(--clr-bg);
@@ -426,6 +483,14 @@
 
       .about-photo img {
         aspect-ratio: 16/10;
+      }
+
+      .today__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .today__item--bred img {
+        aspect-ratio: 21/9;
       }
 
       .founders__grid,
@@ -794,6 +859,33 @@
         <figcaption>Fadøllen er testet. Nu mangler vi bare jer.</figcaption>
       </figure>
 
+    </div>
+  </section>
+
+  <!-- Sådan ser der ud i dag -->
+  <section class="today">
+    <div class="container">
+      <h2 class="today__heading" data-animate="fade-up">Sådan ser der ud i dag.</h2>
+      <p class="today__intro" data-animate="fade-up">Samme lokale, et halvt år senere. Murstenene fik lov at blive stående, gulvet er nyt, og der sidder folk ved bordene — også ude på fortovet.</p>
+
+      <div class="today__grid">
+        <figure class="today__item today__item--bred" data-animate="fade-up">
+          <img src="billeder/facade.jpg" alt="Fyldte langborde på fortovet foran Bar Ækko på Vestergade 46" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption>Fortovet en fredag eftermiddag</figcaption>
+        </figure>
+        <figure class="today__item" data-animate="fade-up">
+          <img src="billeder/faerdig-1.jpg" alt="Bardisken med espressomaskine, kage på disken og barstole langs væggen" width="1600" height="1200" loading="lazy" decoding="async">
+          <figcaption>Baren</figcaption>
+        </figure>
+        <figure class="today__item" data-animate="fade-up">
+          <img src="billeder/faerdig-2.jpg" alt="Forlokalet med grønne pendler, murstensvæg og gæster ved vinduet" width="1600" height="1200" loading="lazy" decoding="async">
+          <figcaption>Forlokalet</figcaption>
+        </figure>
+        <figure class="today__item" data-animate="fade-up">
+          <img src="billeder/faerdig-3.jpg" alt="Det bagerste rum med mosaikborde, bænke langs murstensvæggen og vinhylde" width="1600" height="1200" loading="lazy" decoding="async">
+          <figcaption>Bagerste rum</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 

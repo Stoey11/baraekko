@@ -246,6 +246,61 @@
       transform: scale(1.02);
     }
 
+    .street {
+      position: relative;
+      margin: 0;
+    }
+
+    .street__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .street__figure {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background-color: var(--clr-bg-alt);
+    }
+
+    .street__figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Hold skiltet og gæsterne i billedet, når hero'en beskæres */
+    .hero__image {
+      object-position: center 58%;
+    }
+
+    @media (max-width: 767px) {
+      .hero__image {
+        object-position: 58% 55%;
+      }
+    }
+
+    .street__caption {
+      padding: var(--space-sm) 0 0;
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
+    @media (min-width: 768px) {
+      .street__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .street__caption {
+        padding-top: var(--space-md);
+      }
+    }
+
     @media (min-width: 768px) {
       .opening__grid {
         grid-template-columns: 1fr auto;
@@ -299,7 +354,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__video-container">
-      <img class="hero__image" src="billeder/vestergadefest-1.jpg" alt="Gæster ved langborde på Vestergade under Vestergade Fest" width="882" height="708" fetchpriority="high" decoding="async">
+      <img class="hero__image" src="billeder/facade.jpg" alt="Fyldte langborde på fortovet foran Bar Ækko på Vestergade 46" width="1800" height="1350" fetchpriority="high" decoding="async">
 
       <!-- ØL-VIDEOEN: fjern denne kommentar og slet img-linjen ovenfor for at bytte tilbage
       <video class="hero__video" autoplay muted playsinline loop>
@@ -387,6 +442,24 @@
     </div>
   </section>
 
+
+  <!-- Indenfor -->
+  <section class="street">
+    <div class="container">
+      <div class="street__grid">
+        <figure class="street__figure" data-animate="fade-up">
+          <img src="billeder/faerdig-1.jpg" alt="Bardisken med espressomaskine, kage på disken og barstole langs væggen" width="1600" height="1200" loading="lazy" decoding="async">
+        </figure>
+        <figure class="street__figure" data-animate="fade-up">
+          <img src="billeder/faerdig-2.jpg" alt="Forlokalet med grønne pendler, murstensvæg og gæster ved vinduet" width="1600" height="1200" loading="lazy" decoding="async">
+        </figure>
+        <figure class="street__figure" data-animate="fade-up">
+          <img src="billeder/faerdig-3.jpg" alt="Det bagerste rum med mosaikborde, bænke langs murstensvæggen og vinhylde" width="1600" height="1200" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <figcaption class="street__caption" data-animate="fade-up">50 pladser indenfor og 30 på fortovet · Vestergade 46</figcaption>
+    </div>
+  </section>
 
   <!-- Instagram -->
   <section class="social">
