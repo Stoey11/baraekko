@@ -16,6 +16,7 @@
     "@type": "BarOrPub",
     "@id": "https://www.baraekko.dk/#bar",
     "name": "Bar Ækko",
+    "alternateName": ["Ækko", "Bar Aekko"],
     "url": "https://www.baraekko.dk/",
     "image": "https://www.baraekko.dk/billeder/facade-hero.jpg",
     "email": "kontakt@baraekko.dk",
@@ -30,6 +31,21 @@
     },
     "hasMap": "https://www.google.com/maps/search/?api=1&query=Vestergade+46,+8000+Aarhus+C",
     "servesCuisine": "Café",
+    "hasMenu": "https://www.baraekko.dk/menu.html",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "00:00"
+      }
+    ],
     "sameAs": ["https://www.instagram.com/baraekko/"]
   }
   </script>
