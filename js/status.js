@@ -26,7 +26,11 @@
   const SAERLIGE = {
     '2026-08-21': [11, 26],
     '2026-08-22': [11, 26],
-    '2026-08-23': null
+    '2026-08-23': null,
+    // Aarhus Festuge: åbent til kl. 02 til og med lørdag den 5. september
+    '2026-09-03': [10, 26],
+    '2026-09-04': [10, 26],
+    '2026-09-05': [10, 26]
   };
 
   const DAGE = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'];
