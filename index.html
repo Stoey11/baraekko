@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bar Ækko på Vestergade 46 i Aarhus C. Café om dagen, bar og spillested om aftenen. Åbent hver dag fra klokken 10.">
-  <meta property="og:title" content="Bar Ækko · Vestergade 46, Aarhus C">
-  <meta property="og:description" content="Café om dagen, bar og spillested om aftenen. Kaffe fra formiddagen, og fadøl, vin og cocktails resten af dagen.">
+  <meta name="description" content="Bar Ækko er en bar, café og spillested på Vestergade 46 i Aarhus C. Kaffe og morgenmad fra klokken 10, fadøl, vin og drinks til sent. Åbent hver dag.">
+  <title>Bar Ækko · Bar, café og spillested på Vestergade i Aarhus C</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.baraekko.dk/">
+  <meta property="og:title" content="Bar Ækko · Bar, café og spillested på Vestergade i Aarhus C">
+  <meta property="og:description" content="Bar Ækko er en bar, café og spillested på Vestergade 46 i Aarhus C. Kaffe og morgenmad fra klokken 10, fadøl, vin og drinks til sent. Åbent hver dag.">
   <meta property="og:image" content="https://www.baraekko.dk/billeder/facade-hero.jpg">
-  <title>Bar Ækko · Aarhus</title>
+  <meta property="og:locale" content="da_DK">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.baraekko.dk/">
 
   <script type="application/ld+json">
@@ -36,7 +40,7 @@
     },
     "hasMap": "https://maps.google.com/?cid=10736755461777376139",
     "servesCuisine": "Café",
-    "hasMenu": "https://www.baraekko.dk/menu.html",
+    "hasMenu": "https://www.baraekko.dk/menu",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -62,7 +66,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/reset.css?v=2">
+  <link rel="stylesheet" href="css/reset.css?v=3">
   <link rel="stylesheet" href="css/variables.css?v=2">
   <link rel="stylesheet" href="css/base.css?v=2">
   <link rel="stylesheet" href="css/layout.css?v=2">
@@ -378,7 +382,9 @@
   <section class="hero">
     <div class="hero__video-container">
       <picture>
+        <source media="(max-width: 767px)" type="image/webp" srcset="billeder/facade-hero-mobil.webp">
         <source media="(max-width: 767px)" srcset="billeder/facade-hero-mobil.jpg">
+        <source type="image/webp" srcset="billeder/facade-hero.webp">
         <img class="hero__image" src="billeder/facade-hero.jpg" alt="Fyldte langborde på fortovet foran Bar Ækko på Vestergade 46" width="1800" height="1296" fetchpriority="high" decoding="async">
       </picture>
 
@@ -445,7 +451,7 @@
           <a href="about.html" class="btn btn--outline" style="margin-top: var(--space-md);">Vores Historie</a>
         </div>
         <a href="about.html" class="welcome__image welcome__image--photo" data-animate="fade-up" aria-label="Læs historien om Bar Ækko">
-          <img src="billeder/om-os-1.jpg" alt="Adam, Jacob og Jacob foran Bar Ækko på Vestergade 46" width="1800" height="1350" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="billeder/om-os-1.webp"><img src="billeder/om-os-1.jpg" alt="Adam, Jacob og Jacob foran Bar Ækko på Vestergade 46" width="1800" height="1350" loading="lazy" decoding="async"></picture>
         </a>
       </div>
     </div>
@@ -457,13 +463,13 @@
     <div class="container">
       <div class="street__grid">
         <figure class="street__figure" data-animate="fade-up">
-          <img src="billeder/faerdig-1.jpg" alt="Bardisken med espressomaskine, kage på disken og barstole langs væggen" width="1600" height="1200" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="billeder/faerdig-1.webp"><img src="billeder/faerdig-1.jpg" alt="Bardisken med espressomaskine, kage på disken og barstole langs væggen" width="1600" height="1200" loading="lazy" decoding="async"></picture>
         </figure>
         <figure class="street__figure" data-animate="fade-up">
-          <img src="billeder/faerdig-2.jpg" alt="Forlokalet med grønne pendler, murstensvæg og gæster ved vinduet" width="1600" height="1200" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="billeder/faerdig-2.webp"><img src="billeder/faerdig-2.jpg" alt="Forlokalet med grønne pendler, murstensvæg og gæster ved vinduet" width="1600" height="1200" loading="lazy" decoding="async"></picture>
         </figure>
         <figure class="street__figure" data-animate="fade-up">
-          <img src="billeder/faerdig-3.jpg" alt="Det bagerste rum med mosaikborde, bænke langs murstensvæggen og vinhylde" width="1600" height="1200" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="billeder/faerdig-3.webp"><img src="billeder/faerdig-3.jpg" alt="Det bagerste rum med mosaikborde, bænke langs murstensvæggen og vinhylde" width="1600" height="1200" loading="lazy" decoding="async"></picture>
         </figure>
       </div>
       <figcaption class="street__caption" data-animate="fade-up">50 pladser indenfor og 30 på fortovet · Vestergade 46</figcaption>
@@ -484,7 +490,7 @@
 
         <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
           <div class="social-card__media">
-            <img src="billeder/instagram-1.jpg" alt="Plakat: Bar Ækko åbner på fredag den 21. august" width="642" height="799" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="billeder/instagram-1.webp"><img src="billeder/instagram-1.jpg" alt="Plakat: Bar Ækko åbner på fredag den 21. august" width="642" height="799" loading="lazy" decoding="async"></picture>
           </div>
           <div class="social-card__body">
             <p class="social-card__text">Vi åbner på fredag. Kig forbi fra klokken 11 og bliv, så længe du har lyst.</p>
@@ -494,7 +500,7 @@
 
         <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
           <div class="social-card__media">
-            <img src="billeder/instagram-2.jpg" alt="To af stifterne sidder på stole foran en trailer fuld af barstole" width="642" height="651" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="billeder/instagram-2.webp"><img src="billeder/instagram-2.jpg" alt="To af stifterne sidder på stole foran en trailer fuld af barstole" width="642" height="651" loading="lazy" decoding="async"></picture>
           </div>
           <div class="social-card__body">
             <p class="social-card__text">Stolene er hentet hjem. Der var ikke plads til flere i traileren.</p>
@@ -504,7 +510,7 @@
 
         <a href="https://www.instagram.com/baraekko/" target="_blank" rel="noopener noreferrer" class="social-card">
           <div class="social-card__media">
-            <img src="billeder/instagram-3.jpg" alt="De tre stiftere med hver sin fadøl foran døren til baren" width="642" height="721" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="billeder/instagram-3.webp"><img src="billeder/instagram-3.jpg" alt="De tre stiftere med hver sin fadøl foran døren til baren" width="642" height="721" loading="lazy" decoding="async"></picture>
           </div>
           <div class="social-card__body">
             <p class="social-card__text">Første fadøl i hånden foran vores egen dør. Der er ikke langt igen nu.</p>

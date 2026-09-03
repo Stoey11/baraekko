@@ -44,3 +44,7 @@ button {
   border: none;
   cursor: pointer;
 }
+
+picture {
+  display: contents;
+}
