@@ -26,9 +26,15 @@
     el.href = post.permalink;
 
     if (img) {
+      // De faste kort ligger i et <picture> med en WebP-kilde. Browseren
+      // foretrækker den kilde frem for img'ets src, så den skal fjernes,
+      // ellers bliver det gamle billede stående.
+      const kilder = el.querySelectorAll('picture source');
+
       // Bytter først billedet, når det nye er hentet, så kortet ikke blinker.
       const nyt = new Image();
       nyt.onload = () => {
+        kilder.forEach(kilde => kilde.remove());
         img.src = post.image;
         img.alt = post.caption ? forkort(post.caption, 120) : 'Opslag fra @baraekko på Instagram';
       };
