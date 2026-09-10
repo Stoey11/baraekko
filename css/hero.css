@@ -415,3 +415,23 @@
     gap: 0.25rem;
   }
 }
+
+/* Opfordring til Google-anmeldelse under åbningstider */
+.hours-band__review {
+  margin-top: var(--space-md);
+  color: var(--clr-bg);
+  opacity: 0.75;
+  font-size: var(--fs-small);
+}
+
+.hours-band__review a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.hours-band__review a:hover {
+  text-decoration-color: currentColor;
+}
