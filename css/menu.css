@@ -267,3 +267,52 @@
     gap: var(--space-sm);
   }
 }
+
+/* ===== Sektionsfoto ved siden af kortet ===== */
+.menu-section__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.menu-section__photo {
+  margin: 0;
+  order: -1; /* Mobil: foto over listen */
+}
+
+.menu-section__photo picture,
+.menu-section__photo img {
+  display: block;
+  width: 100%;
+}
+
+.menu-section__photo img {
+  height: auto; /* Vises i sit eget format, ingen beskæring */
+}
+
+.menu-section__photo figcaption {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-small);
+  color: var(--clr-ink-soft);
+}
+
+.menu-section--dark .menu-section__photo figcaption {
+  color: var(--clr-bg);
+  opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .menu-section__layout {
+    grid-template-columns: minmax(0, 850px) minmax(280px, 380px);
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  .menu-section__photo {
+    order: 0;
+    position: sticky;
+    top: calc(var(--nav-height) + 72px);
+  }
+
+}
