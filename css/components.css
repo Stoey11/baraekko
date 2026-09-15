@@ -552,3 +552,266 @@ textarea.form-input {
     grid-template-columns: 2fr 1fr 1fr 1fr;
   }
 }
+
+    /* ===== Klippekort · Ækko Regulars ===== */
+    .loyalty {
+      padding: var(--space-xl) 0;
+      background-color: var(--clr-ink);
+      color: var(--clr-bg);
+    }
+
+    .loyalty__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    .loyalty .eyebrow {
+      color: var(--clr-accent);
+    }
+
+    .loyalty__heading {
+      color: var(--clr-bg);
+      font-size: clamp(2rem, 5.5vw, 3.75rem);
+      line-height: 0.95;
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .loyalty__body {
+      color: rgba(243, 231, 218, 0.72);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      max-width: 42ch;
+      margin-bottom: var(--space-md);
+    }
+
+    .loyalty__perks {
+      list-style: none;
+      margin: 0 0 var(--space-md);
+      padding: 0;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .loyalty__perks li {
+      position: relative;
+      padding-left: 1.6rem;
+      font-size: var(--fs-body);
+      color: rgba(243, 231, 218, 0.9);
+    }
+
+    .loyalty__perks li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 0.05em;
+      font-size: 0.8em;
+      color: var(--clr-accent);
+    }
+
+    .loyalty__cta {
+      background-color: var(--clr-bg);
+      border-color: var(--clr-bg);
+      color: var(--clr-ink);
+    }
+
+    .loyalty__cta:hover {
+      background-color: var(--clr-accent);
+      border-color: var(--clr-accent);
+      color: var(--clr-bg);
+    }
+
+    .loyalty__hint {
+      margin: var(--space-sm) 0 0;
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(243, 231, 218, 0.45);
+    }
+
+    /* QR-koden er kun til dem der sidder ved en computer —
+       på telefonen trykker man bare på knappen */
+    .loyalty__qr {
+      display: none;
+    }
+
+    /* Selve kortet, tegnet så det ligner passet i telefonen */
+    .loyalty__pass {
+      width: 100%;
+      max-width: 330px;
+      margin: 0 auto;
+      padding: var(--space-md) var(--space-md) var(--space-sm);
+      border-radius: 20px;
+      color: var(--clr-ink);
+      background-image: linear-gradient(170deg, var(--clr-cream) 0%, var(--clr-bg) 55%, var(--clr-bg-alt) 100%);
+      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
+    }
+
+    .loyalty__pass-logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
+      text-align: center;
+      color: var(--clr-olive);
+    }
+
+    .loyalty__stamps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.7rem;
+      margin: var(--space-md) 0;
+    }
+
+    .loyalty__stamp {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1.5px dashed rgba(92, 107, 60, 0.4);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: rgba(92, 107, 60, 0.45);
+    }
+
+    .loyalty__stamp--done {
+      border-style: solid;
+      border-color: var(--clr-olive);
+      background-color: rgba(92, 107, 60, 0.14);
+      color: var(--clr-olive);
+    }
+
+    .loyalty__pass-meta {
+      display: grid;
+      gap: 0.15rem;
+      padding-top: var(--space-sm);
+      border-top: 1px solid rgba(26, 26, 26, 0.1);
+    }
+
+    .loyalty__pass-label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
+    .loyalty__pass-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--clr-olive);
+    }
+
+    .loyalty__pass-code {
+      display: block;
+      width: 88px;
+      height: 88px;
+      margin: var(--space-md) auto 0.4rem;
+      border-radius: 6px;
+    }
+
+    .loyalty__pass-foot {
+      margin: 0;
+      text-align: center;
+      font-size: 0.625rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-ink-soft);
+    }
+
+    @media (min-width: 768px) {
+      .loyalty__grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: var(--space-xl);
+      }
+
+      .loyalty__qr {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        margin-top: var(--space-lg);
+        padding-top: var(--space-md);
+        border-top: 1px solid rgba(243, 231, 218, 0.16);
+      }
+
+      .loyalty__qr img {
+        width: 104px;
+        height: 104px;
+        padding: 7px;
+        border-radius: var(--radius-md);
+        background-color: var(--clr-bg);
+      }
+
+      .loyalty__qr p {
+        margin: 0;
+        max-width: 26ch;
+        font-size: var(--fs-small);
+        color: rgba(243, 231, 218, 0.6);
+      }
+
+      .loyalty__pass {
+        max-width: 360px;
+        transform: rotate(-3deg);
+      }
+    }
+
+    /* Bånd på menukortet — ligger i det mørke kaffe-afsnit */
+    .loyalty-band {
+      display: grid;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+      padding: var(--space-md);
+      border-radius: 16px;
+      color: var(--clr-ink);
+      background-image: linear-gradient(120deg, var(--clr-cream) 0%, var(--clr-bg) 100%);
+    }
+
+    .loyalty-band__eyebrow {
+      display: block;
+      font-size: var(--fs-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+    }
+
+    .loyalty-band__title {
+      margin: var(--space-xs) 0 0;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      line-height: 1.1;
+      color: var(--clr-ink);
+    }
+
+    .loyalty-band__note {
+      margin: 0.4rem 0 0;
+      font-size: var(--fs-small);
+      color: var(--clr-ink-soft);
+    }
+
+    .loyalty-band .btn {
+      justify-self: start;
+    }
+
+    .loyalty[hidden],
+    .loyalty-band[hidden] {
+      display: none !important;
+    }
+
+    @media (min-width: 768px) {
+      .loyalty-band {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: var(--space-lg);
+        padding: var(--space-md) var(--space-lg);
+      }
+
+      .loyalty-band .btn {
+        justify-self: end;
+      }
+    }
