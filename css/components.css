@@ -646,15 +646,30 @@ textarea.form-input {
       border-radius: 20px;
       color: var(--clr-ink);
       background-image: linear-gradient(170deg, var(--clr-cream) 0%, var(--clr-bg) 55%, var(--clr-bg-alt) 100%);
-      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(26, 26, 26, 0.07);
+      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.65);
     }
 
-    .loyalty__pass-logo {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 1.6rem;
-      letter-spacing: 0.01em;
+    .loyalty__pass-head {
       text-align: center;
+    }
+
+    .loyalty__pass-mark {
+      display: block;
+      width: 54px;
+      height: 54px;
+      margin: 0 auto;
+    }
+
+    .loyalty__pass-wordmark {
+      display: block;
+      margin-top: 0.55rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
       color: var(--clr-olive);
     }
 
@@ -662,7 +677,7 @@ textarea.form-input {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0.7rem;
-      margin: var(--space-md) 0;
+      margin: 1.6rem 0 var(--space-md);
     }
 
     .loyalty__stamp {
@@ -680,8 +695,8 @@ textarea.form-input {
     .loyalty__stamp--done {
       border-style: solid;
       border-color: var(--clr-olive);
-      background-color: rgba(92, 107, 60, 0.14);
-      color: var(--clr-olive);
+      background-color: var(--clr-olive);
+      color: var(--clr-cream);
     }
 
     .loyalty__pass-meta {
