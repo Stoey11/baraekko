@@ -675,8 +675,8 @@ textarea.form-input {
 
     .loyalty__stamps {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.7rem;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
       margin: 1.6rem 0 var(--space-md);
     }
 
