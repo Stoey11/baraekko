@@ -699,6 +699,19 @@ textarea.form-input {
       color: var(--clr-cream);
     }
 
+    /* Det sjette felt er den gratis kop */
+    .loyalty__stamp--free {
+      border-style: solid;
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+      background-color: var(--clr-amber-light);
+    }
+
+    .loyalty__stamp--free svg {
+      width: 55%;
+      height: 55%;
+    }
+
     .loyalty__pass-meta {
       display: grid;
       gap: 0.15rem;
